@@ -49,9 +49,9 @@
     "icon": "icons/kh1-ap/TigerHead.webp"
   },
   {
-    "name": "Jafar",
+    "name": "Genie Jafar",
     "icon": "icons/kh1-ap/Jafar.webp",
-    "apLocations": ["Agrabah Defeat Jafar Blizzard Event"]
+    "apLocations": ["Agrabah Defeat Jafar Genie Fire Event"]
   },
   {
     "name": "Parasite Cage 1",
@@ -1253,7 +1253,8 @@
   },
   {
     "name": "Arch Behemoth (EOTW)",
-    "icon": "icons/kh1-ap/ArchBehemoth.webp"
+    "icon": "icons/kh1-ap/ArchBehemoth.webp",
+    "apLocations": ["End of the World Final Dimension 4th Chest"]
   },
   {
     "name": "Hades Cup 1st Seed",
