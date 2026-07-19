@@ -130,7 +130,7 @@ function renderTraditionalBoard() {
       const newState = squareStates[id] === 2 ? 0 : 2;
       setSquareState(div, id, newState);
 
-      checkForBingo((r, c) => {
+      checkForBingo(bingoSize, (r, c) => {
         const index = r * bingoSize + c;
         const id = `bingo-${index}`;
         return squareStates[id] === 2;
@@ -152,7 +152,7 @@ function renderTraditionalBoard() {
       if (wheelCheckbox.checked) {
         const dir = e.deltaY < 0 ? 1 : -1;
         cycleSquare(div, div.dataset.id, dir);
-        checkForBingo((r, c) => {
+        checkForBingo(bingoSize, (r, c) => {
           const index = r * bingoSize + c;
           const id = `bingo-${index}`;
           return squareStates[id] === 2;
@@ -176,11 +176,11 @@ function renderTraditionalBoard() {
     if (state === 2) div.classList.add("completed");
   });
 
-  updateBingoHighlights();
+  updateBingoHighlights(bingoSize);
 }
 
 // Bingo checking
-function checkForBingo(isMarked) {
+function checkForBingo(size, isMarked) {
   if (!bingoLogic) {
     bingoLines = [];
     updateBingoHighlights();
@@ -188,7 +188,6 @@ function checkForBingo(isMarked) {
     return;
   }
 
-  const size = bingoSize;
   bingoLines = [];
 
   // rows
@@ -227,7 +226,7 @@ function checkForBingo(isMarked) {
   }
   if (diag2.length === size) bingoLines.push(diag2);
 
-  updateBingoHighlights();
+  updateBingoHighlights(size);
   updateBingoScore();
 }
 
@@ -238,14 +237,14 @@ function updateBingoScore() {
 }
 
 // Change bingo line color
-function updateBingoHighlights() {
+function updateBingoHighlights(size) {
   const squares = board.children;
 
   [...squares].forEach((el) => el.classList.remove("bingo-line"));
 
   bingoLines.forEach((line) => {
     line.forEach(({ r, c }) => {
-      const index = r * bingoSize + c;
+      const index = r * size + c;
       squares[index]?.classList.add("bingo-line");
     });
   });
@@ -363,7 +362,8 @@ function startExplorationBingo(existingPool = null) {
   // steps) gets the shallowest-sphere objective, falling back to the pool's
   // existing shuffled order when no sphere data is loaded (or for non-AP
   // lists).
-  const selectedPool = existingPool ?? shuffle([...allObjectives]).slice(0, boardSize * boardSize);
+  const selectedPool =
+    existingPool ?? shuffle([...allObjectives]).slice(0, boardSize * boardSize);
   lastSelectedPool = selectedPool;
   const pool = orderPoolBySphere(selectedPool);
   const distances = _computeExplorationDistances(boardSize, initialReveal);
@@ -729,7 +729,9 @@ function startRoguelikeBingo(existingPool = null) {
   // list). On a re-arrangement, existingPool is already the fixed,
   // totalNeeded-sized roster — orderPoolBySphere only reorders it, and the
   // same walk re-decides which row each one lands in.
-  const pool = existingPool ? orderPoolBySphere(existingPool) : shuffle([...allObjectives]);
+  const pool = existingPool
+    ? orderPoolBySphere(existingPool)
+    : shuffle([...allObjectives]);
   const selectedPool = [];
 
   for (let r = 0; r < cfg.rows; r++) {
@@ -744,7 +746,8 @@ function startRoguelikeBingo(existingPool = null) {
     for (let c = 0; c < cfg.maxWidth; c++) {
       if (_isActiveCell(rowNum, c, cfg, widths)) {
         // Row 1 center = START
-        const obj = rowNum === 1 ? null : takeNextForRow(pool, usedFamiliesThisRow);
+        const obj =
+          rowNum === 1 ? null : takeNextForRow(pool, usedFamiliesThisRow);
         if (obj) selectedPool.push(obj);
         rogueBoard[r][c] = { obj, type: "active" };
         rogueVisibleMap[r][c] = false;
