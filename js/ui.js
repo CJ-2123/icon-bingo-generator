@@ -25,7 +25,14 @@ const shinyCheckbox = document.getElementById("shinyCheckbox");
 const shinyInput = document.getElementById("shinyInput");
 const shinyCountInput = document.getElementById("shinyCount");
 
-const bingoLogicToggle = document.getElementById("bingoLogicToggle");
+const bingoLogicToggles = document.querySelectorAll(".bingoLogicToggle");
+
+bingoLogicToggles.forEach((toggle) => {
+  toggle.addEventListener("change", (e) => {
+    bingoLogic = e.target.checked;
+    bingoLogicToggles.forEach((t) => (t.checked = bingoLogic));
+  });
+});
 
 let restoringFromURL = false;
 
@@ -58,12 +65,10 @@ window.addEventListener("DOMContentLoaded", handleInitialLoad);
 function shouldHideBoard() {
   const params = new URLSearchParams(window.location.search);
   if (params.get("view") === "game" && params.get("m") === "roguelike") {
-    return false
-  }
-  else if (params.get("view") === "game") {
+    return false;
+  } else if (params.get("view") === "game") {
     return true;
-  }
-  else {
+  } else {
     return false;
   }
 }
@@ -74,8 +79,8 @@ function setInitialUI() {
     shinyCheckbox.checked = shinyMode;
   }
 
-  if (bingoLogicToggle) {
-    bingoLogicToggle.checked = bingoLogic;
+  if (bingoLogicToggles.length) {
+    bingoLogicToggles.forEach((t) => (t.checked = bingoLogic));
   }
 }
 
@@ -103,11 +108,6 @@ shinyCheckbox.addEventListener("change", () => {
 
   shinyMode = shinyCheckbox.checked;
   syncShinyUI(shinyMode);
-});
-
-// Bingo logic toggle
-bingoLogicToggle.addEventListener("change", (e) => {
-  bingoLogic = bingoLogicToggle.checked;
 });
 
 // Save marking color selection
@@ -432,7 +432,7 @@ function applySettingsFromURL() {
   // bingo logic
   if (params.has("bl")) {
     bingoLogic = params.get("bl") === "1";
-    document.getElementById("bingoLogicToggle").checked = bingoLogic;
+    bingoLogicToggles.forEach((t) => (t.checked = bingoLogic));
   }
 
   // shiny mode
@@ -459,7 +459,7 @@ function setMarkingColor(color) {
     "theme-red",
     "theme-blue",
     "theme-gold",
-    "theme-orange"
+    "theme-orange",
   );
 
   body.classList.add(`theme-${color}`);
@@ -543,7 +543,7 @@ function setupTagFilters(objectives) {
 // Update list when tags are toggled
 function applyTagFiltering() {
   allObjectives = rawObjectives.filter(
-    (obj) => obj.tags.length === 0 || obj.tags.some((t) => enabledTags.has(t))
+    (obj) => obj.tags.length === 0 || obj.tags.some((t) => enabledTags.has(t)),
   );
 
   updateListPreview(allObjectives);
