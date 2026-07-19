@@ -86,6 +86,7 @@ function buildShareURL(isGameLink = false) {
   }
 
   if (selectedMode === "exploration") {
+    params.set("bl", bingoLogic ? "1" : "0");
     params.set("bs", document.getElementById("exploreSize").value);
     params.set("start", document.getElementById("exploreStart").value);
   }
