@@ -34,7 +34,26 @@ Multi-mode bingo generator with icon support
 - The "Reset" button in the top left corner of the generator page will reset the page to default.
 - The "Back" button in the top left corner of the game board page will send you back to the generator page.
 
+**Custom Lists**
+
 For using your own list, see the "Custom Bingo Lists" section.
+
+**Archipelago (AP) Features**
+
+![Archipelago](icons/readme/ap-options.png)
+
+Certain games/lists can be connected to an [Archipelago](https://archipelago.gg/) server for auto-tracking.
+
+Current supported games:
+
+- Kingdom Hearts 1 AP Randomizer
+
+The following are available on the board page:
+
+- Under "Archipelago Live Tracking" dropdown, enter the information and press connect to enable auto-tracking (Not available for Rush Mode)
+  - Squares with green dots are auto-tracked.
+- Under "Sphere-based Placement" dropdown, upload your randomizer zip file to place squares according to your specific seed (Available for Fog of War and Roguelike Modes)
+  - The objectives generated will not be changed, only rearranged according to spheres for the specific randomizer seed.
 
 ## Overview of Features
 
@@ -42,21 +61,17 @@ Full bingo lists: https://cj-2123.github.io/docs/bingo.html
 
 ### Bingo Board Types
 
-#### Rush
+#### Bingo
 
-![Rush Generator](icons/readme/rush-options.png)
+![Bingo Generator](icons/readme/bingo-options.png)
 
-Complete 1 of 3 goals given to you. After completing a goal, 3 more goals appear.
+Classic Bingo Mode. Given a board, complete a line to get a bingo.
 
-- The goal you chose and the 2 goals you didn't choose will not show up again.
-- If there are less than 3 goals left, the final 1 or 2 will be shown.
-- "Max Rounds" determines how many rounds you will play. The default is to play until the entire objective list shows up.
-- Score keeps track of how many rounds you've completed.
-- Log keeps track of which goals show up and which one was chosen.
+- Bingo Logic enables Bingo Line Logic
+  - Squares change color when they are part of a bingo line.
+  - Score keeps track of how many bingo lines you've completed.
 
-Based on Rush Bingo Mode by DotoPotato: Lockout.Live
-
-![Rush](icons/readme/rush.png)
+![Bingo](icons/readme/bingo.png)
 
 #### Fog of War
 
@@ -64,7 +79,10 @@ Based on Rush Bingo Mode by DotoPotato: Lockout.Live
 
 Select squares are revealed initially while the rest of the board is hidden. Complete a goal to reveal the squares to the top, bottom, left, and right.
 
-- Score keeps track of how many goals you've completed.
+- Bingo Logic enables Bingo Line Logic
+  - Squares change color when they are part of a bingo line.
+  - When enabled, score keeps track of how many bingo lines you've completed.
+  - When disabled, score keeps track of how many goals you've completed.
 
 ![Fog of War](icons/readme/fog-of-war.png)
 
@@ -78,18 +96,6 @@ Select squares are revealed initially while the rest of the board is hidden. Com
 - River picks the left-most column of the board.
 - Random picks a random amount and starting position of squares.
   - Minimum: 2. Maximum: Board Size.
-
-#### Bingo
-
-![Bingo Generator](icons/readme/bingo-options.png)
-
-Classic Bingo Mode. Given a board, complete a line to get a bingo.
-
-- Bingo Logic enables Bingo Line Logic
-  - Squares change color when they are part of a bingo line.
-  - Score keeps track of how many bingo lines you've completed.
-
-![Bingo](icons/readme/bingo.png)
 
 #### Roguelike
 
@@ -110,6 +116,22 @@ Board size requirements:
 - B20: 165 objectives
 
 ![Roguelike](icons/readme/roguelike.png)
+
+#### Rush
+
+![Rush Generator](icons/readme/rush-options.png)
+
+Complete 1 of 3 goals given to you. After completing a goal, 3 more goals appear.
+
+- The goal you chose and the 2 goals you didn't choose will not show up again.
+- If there are less than 3 goals left, the final 1 or 2 will be shown.
+- "Max Rounds" determines how many rounds you will play. The default is to play until the entire objective list shows up.
+- Score keeps track of how many rounds you've completed.
+- Log keeps track of which goals show up and which one was chosen.
+
+Based on Rush Bingo Mode by DotoPotato: Lockout.Live
+
+![Rush](icons/readme/rush.png)
 
 ### Modifiers
 
@@ -192,6 +214,8 @@ The list must have a "name" property for each objective. "icon" is optional. Cus
 ```
 
 ## Credits
+
+AP autotracking and Sphere Placement made by https://github.com/gaithern
 
 Icons from:
 
