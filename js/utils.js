@@ -176,7 +176,15 @@ function renderScore() {
   }
 
   if (selectedMode === "exploration") {
-    score.textContent = `Score: ${scoreState.squaresCompleted}`;
+    if (bingoLogic) {
+      const count = scoreState.bingoLines;
+      score.textContent =
+        count === 0
+          ? "Score: 0 Lines"
+          : `Score: ${count} Line${count > 1 ? "s" : ""}`;
+    } else {
+      score.textContent = `Score: ${scoreState.squaresCompleted}`;
+    }
   }
 
   if (selectedMode === "rush") {
@@ -233,7 +241,9 @@ function _isPhantomCell(rowNum, col, cfg) {
 // Helper for Fog of War: grid-step distance from the nearest initial-reveal
 // square, via BFS flood fill (mirrors how revealNeighbors expands play).
 function _computeExplorationDistances(boardSize, initialReveal) {
-  const dist = Array.from({ length: boardSize }, () => Array(boardSize).fill(Infinity));
+  const dist = Array.from({ length: boardSize }, () =>
+    Array(boardSize).fill(Infinity),
+  );
   const queue = [];
 
   initialReveal.forEach(({ r, c }) => {

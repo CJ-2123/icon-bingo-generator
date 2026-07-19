@@ -458,6 +458,10 @@ function renderExplorationBoard() {
           setSquareState(div, id, 2);
           updateFogScore();
           revealNeighbors(r, c);
+          checkForBingo(
+            boardSize,
+            (r, c) => squareStates[`fog-${r}-${c}`] === 2,
+          );
         });
 
         div.addEventListener("contextmenu", (e) => {
@@ -474,7 +478,13 @@ function renderExplorationBoard() {
             const dir = e.deltaY < 0 ? 1 : -1;
             cycleSquare(div, id, dir);
             updateFogScore();
-            if (squareStates[id] === 2) revealNeighbors(r, c);
+            if (squareStates[id] === 2) {
+              revealNeighbors(r, c);
+            }
+            checkForBingo(
+              boardSize,
+              (r, c) => squareStates[`fog-${r}-${c}`] === 2,
+            );
           } else {
             handleCountScroll(e, div, id);
           }
@@ -486,6 +496,7 @@ function renderExplorationBoard() {
       board.appendChild(div);
     }
   }
+  updateBingoHighlights(boardSize);
 }
 
 // Fog of War score: count squares
