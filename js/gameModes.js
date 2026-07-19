@@ -266,4 +266,7 @@ function generateGame() {
   if (shouldHideBoard()) {
     hideBoard();
   }
+
+  if (typeof onApGameGenerated === "function") onApGameGenerated();
+  if (typeof onSphereGameGenerated === "function") onSphereGameGenerated();
 }

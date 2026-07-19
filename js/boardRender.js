@@ -130,7 +130,7 @@ function renderTraditionalBoard() {
       const newState = squareStates[id] === 2 ? 0 : 2;
       setSquareState(div, id, newState);
 
-      checkForBingo((r, c) => {
+      checkForBingo(bingoSize, (r, c) => {
         const index = r * bingoSize + c;
         const id = `bingo-${index}`;
         return squareStates[id] === 2;
@@ -152,7 +152,7 @@ function renderTraditionalBoard() {
       if (wheelCheckbox.checked) {
         const dir = e.deltaY < 0 ? 1 : -1;
         cycleSquare(div, div.dataset.id, dir);
-        checkForBingo((r, c) => {
+        checkForBingo(bingoSize, (r, c) => {
           const index = r * bingoSize + c;
           const id = `bingo-${index}`;
           return squareStates[id] === 2;
@@ -176,11 +176,11 @@ function renderTraditionalBoard() {
     if (state === 2) div.classList.add("completed");
   });
 
-  updateBingoHighlights();
+  updateBingoHighlights(bingoSize);
 }
 
 // Bingo checking
-function checkForBingo(isMarked) {
+function checkForBingo(size, isMarked) {
   if (!bingoLogic) {
     bingoLines = [];
     updateBingoHighlights();
@@ -188,7 +188,6 @@ function checkForBingo(isMarked) {
     return;
   }
 
-  const size = bingoSize;
   bingoLines = [];
 
   // rows
@@ -227,7 +226,7 @@ function checkForBingo(isMarked) {
   }
   if (diag2.length === size) bingoLines.push(diag2);
 
-  updateBingoHighlights();
+  updateBingoHighlights(size);
   updateBingoScore();
 }
 
@@ -238,14 +237,14 @@ function updateBingoScore() {
 }
 
 // Change bingo line color
-function updateBingoHighlights() {
+function updateBingoHighlights(size) {
   const squares = board.children;
 
   [...squares].forEach((el) => el.classList.remove("bingo-line"));
 
   bingoLines.forEach((line) => {
     line.forEach(({ r, c }) => {
-      const index = r * bingoSize + c;
+      const index = r * size + c;
       squares[index]?.classList.add("bingo-line");
     });
   });
@@ -253,8 +252,11 @@ function updateBingoHighlights() {
 
 // ================= Fog of War ====================
 
-// Start fog of war
-function startExplorationBingo() {
+// Start fog of war. existingPool: when re-arranging an already-generated
+// board (a sphere .zip was just uploaded/cleared from the board page), the
+// exact objectives already on the board — skips reselecting them so which
+// objectives appear never depends on whether/when sphere data is loaded.
+function startExplorationBingo(existingPool = null) {
   if (!allObjectives.length) return;
 
   boardSize = Number(document.getElementById("exploreSize").value);
@@ -262,24 +264,6 @@ function startExplorationBingo() {
   if (allObjectives.length < boardSize * boardSize) {
     status.textContent = "Not enough objectives for this board size!";
     return;
-  }
-
-  const shuffled = shuffle(allObjectives).slice(0, boardSize * boardSize);
-
-  explorationBoard = [];
-  visibleMap = [];
-  markedMap = [];
-
-  // hide squares
-  for (let r = 0; r < boardSize; r++) {
-    explorationBoard[r] = [];
-    visibleMap[r] = [];
-    markedMap[r] = [];
-    for (let c = 0; c < boardSize; c++) {
-      explorationBoard[r][c] = shuffled[r * boardSize + c];
-      visibleMap[r][c] = false;
-      markedMap[r][c] = false;
-    }
   }
 
   startingSquares = document.getElementById("exploreStart").value;
@@ -371,6 +355,48 @@ function startExplorationBingo() {
     }
   }
 
+  // Which objectives are on the board is decided here, once, independent of
+  // sphere data — reused as-is on a later re-arrangement (existingPool) so
+  // uploading/clearing a sphere .zip never changes who's on the board, only
+  // where. Fill order: nearest to the initial reveal squares (in grid
+  // steps) gets the shallowest-sphere objective, falling back to the pool's
+  // existing shuffled order when no sphere data is loaded (or for non-AP
+  // lists).
+  const selectedPool =
+    existingPool ?? shuffle([...allObjectives]).slice(0, boardSize * boardSize);
+  lastSelectedPool = selectedPool;
+  const pool = orderPoolBySphere(selectedPool);
+  const distances = _computeExplorationDistances(boardSize, initialReveal);
+  const orderedCells = _orderCellsByDistance(boardSize, distances);
+
+  // Position-keyed marks/counts from whatever board (if any) was here
+  // before — stale otherwise, since a different objective can now occupy
+  // the same position after a re-arrangement.
+  Object.keys(squareStates)
+    .filter((key) => key.startsWith("fog-"))
+    .forEach((key) => delete squareStates[key]);
+  Object.keys(squareCounts)
+    .filter((key) => key.startsWith("fog-"))
+    .forEach((key) => delete squareCounts[key]);
+
+  explorationBoard = [];
+  visibleMap = [];
+  markedMap = [];
+
+  for (let r = 0; r < boardSize; r++) {
+    explorationBoard[r] = [];
+    visibleMap[r] = [];
+    markedMap[r] = [];
+    for (let c = 0; c < boardSize; c++) {
+      visibleMap[r][c] = false;
+      markedMap[r][c] = false;
+    }
+  }
+
+  orderedCells.forEach(({ r, c }, i) => {
+    explorationBoard[r][c] = pool[i];
+  });
+
   initialReveal.forEach((pos) => (visibleMap[pos.r][pos.c] = true));
 
   renderExplorationBoard();
@@ -432,6 +458,10 @@ function renderExplorationBoard() {
           setSquareState(div, id, 2);
           updateFogScore();
           revealNeighbors(r, c);
+          checkForBingo(
+            boardSize,
+            (r, c) => squareStates[`fog-${r}-${c}`] === 2,
+          );
         });
 
         div.addEventListener("contextmenu", (e) => {
@@ -448,7 +478,13 @@ function renderExplorationBoard() {
             const dir = e.deltaY < 0 ? 1 : -1;
             cycleSquare(div, id, dir);
             updateFogScore();
-            if (squareStates[id] === 2) revealNeighbors(r, c);
+            if (squareStates[id] === 2) {
+              revealNeighbors(r, c);
+            }
+            checkForBingo(
+              boardSize,
+              (r, c) => squareStates[`fog-${r}-${c}`] === 2,
+            );
           } else {
             handleCountScroll(e, div, id);
           }
@@ -460,6 +496,7 @@ function renderExplorationBoard() {
       board.appendChild(div);
     }
   }
+  updateBingoHighlights(boardSize);
 }
 
 // Fog of War score: count squares
@@ -663,7 +700,12 @@ function updateProgress() {
 // ================= Roguelike Mode ====================
 // majority by AI
 
-function startRoguelikeBingo() {
+// existingPool: when re-arranging an already-generated board (a sphere .zip
+// was just uploaded/cleared from the board page), the exact objectives
+// already on the board (any order) — reordered by orderPoolBySphere and
+// re-walked into rows, but never reselected. See startExplorationBingo for
+// the full rationale.
+function startRoguelikeBingo(existingPool = null) {
   const sizeKey = document.getElementById("rogueSize").value;
   const cfg = ROGUELIKE_CONFIGS[sizeKey];
   if (!cfg) return;
@@ -683,18 +725,41 @@ function startRoguelikeBingo() {
     return;
   }
 
-  const pool = shuffle([...allObjectives]);
-  let poolIdx = 0;
+  // Position-keyed marks/counts from whatever board (if any) was here
+  // before — stale otherwise, since a different objective can now occupy
+  // the same position after a re-arrangement.
+  Object.keys(squareStates)
+    .filter((key) => key.startsWith("rogue-"))
+    .forEach((key) => delete squareStates[key]);
+  Object.keys(squareCounts)
+    .filter((key) => key.startsWith("rogue-"))
+    .forEach((key) => delete squareCounts[key]);
+
+  // On first generation, selection and row placement happen in the same
+  // walk below (family-avoidance considered against the full remaining
+  // list). On a re-arrangement, existingPool is already the fixed,
+  // totalNeeded-sized roster — orderPoolBySphere only reorders it, and the
+  // same walk re-decides which row each one lands in.
+  const pool = existingPool
+    ? orderPoolBySphere(existingPool)
+    : shuffle([...allObjectives]);
+  const selectedPool = [];
 
   for (let r = 0; r < cfg.rows; r++) {
     rogueBoard[r] = [];
     rogueVisibleMap[r] = [];
     const rowNum = r + 1;
+    // Reset per row: picking one cell in a row discards the rest, so two
+    // tiers of the same collectible (e.g. "5 Postcards" and "8 Postcards")
+    // must never land in the same row together — see takeNextForRow.
+    const usedFamiliesThisRow = new Set();
 
     for (let c = 0; c < cfg.maxWidth; c++) {
       if (_isActiveCell(rowNum, c, cfg, widths)) {
         // Row 1 center = START
-        const obj = rowNum === 1 ? null : pool[poolIdx++];
+        const obj =
+          rowNum === 1 ? null : takeNextForRow(pool, usedFamiliesThisRow);
+        if (obj) selectedPool.push(obj);
         rogueBoard[r][c] = { obj, type: "active" };
         rogueVisibleMap[r][c] = false;
       } else if (_isPhantomCell(rowNum, c, cfg)) {
@@ -706,6 +771,8 @@ function startRoguelikeBingo() {
       }
     }
   }
+
+  lastSelectedPool = selectedPool;
 
   // reveal only the START square
   rogueVisibleMap[0][cfg.centerCol] = true;

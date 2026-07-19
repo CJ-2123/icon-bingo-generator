@@ -18,7 +18,7 @@ let explorationBoard = [];
 let visibleMap = [];
 let boardSize = 5;
 
-let selectedMode = "rush";
+let selectedMode = "classic";
 const rushLimit = document.getElementById("rushOptions");
 const traditionalOptions = document.getElementById("traditionalOptions");
 const explorationOptions = document.getElementById("explorationOptions");

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Icon Bingo Generator</title>
 <link href="style.css" rel="stylesheet">
+<link rel="icon" href="data:,">
 </head>
 
 <body class="preload">
@@ -44,10 +45,10 @@
     <div class="control-headers" id="modeOptionsHeader">Mode Options</div>
 
     <select class="dropdown" id="modeSelect">
-      <option value="rush" selected>Rush</option>
+      <option value="classic" selected>Bingo</option>
       <option value="exploration">Fog of War</option>
-      <option value="classic">Bingo</option>
       <option value="roguelike">Roguelike</option>
+      <option value="rush">Rush</option>
     </select>
 
     <!-- Rush -->
@@ -69,7 +70,7 @@
             Highlights completed lines and counts bingo score
           </div>
         </span>
-          <input type="checkbox" id="bingoLogicToggle">
+          <input type="checkbox" class="bingoLogicToggle">
         <span class="slider"></span>
       </label>
       
@@ -89,6 +90,16 @@
 
     <!-- Fog of War -->
     <div id="explorationOptions" class="mode-options">
+      <label class="custom-checkbox">
+        <span class="label-text">Bingo Logic:
+          <div class="control-hint">
+            Highlights completed lines and counts bingo score
+          </div>
+        </span>
+          <input type="checkbox" class="bingoLogicToggle">
+        <span class="slider"></span>
+      </label>
+
       <label>
         Board Size:
         <select class="dropdown" id="exploreSize">
@@ -124,6 +135,7 @@
         </select>
       </label>
     </div>
+
   </div>
 
   <div class="control-row" id="modifiers">
@@ -193,13 +205,40 @@
 
     <div id="wheel-toggle" class="in-game-sliders">
       <label class="custom-checkbox tag-checkbox" style="font-weight: bold;">
-          <span class="label-text">Wheel Mode: 
+          <span class="label-text">Wheel Mode:
           </span>
            <input type="checkbox" id="wheel-Checkbox" checked>
           <span class="slider"></span>
           <span id="wheel-mode-label">Mark</span>
       </label>
     </div>
+  </div>
+
+  <details id="spherePanel" class="hidden ap-tracker-panel">
+    <summary class="info-toggle">Sphere-based Placement</summary>
+    <div class="ap-tracker-fields">
+      <div class="ap-tracker-inline-row">
+        <input id="sphereFileInput" type="file" accept="application/zip,.zip">
+        <button id="sphereClearBtn" type="button">Clear</button>
+      </div>
+      <div id="sphereStatus" class="control-hint"></div>
+    </div>
+  </details>
+
+  <details id="apTrackerPanel" class="hidden ap-tracker-panel">
+    <summary class="info-toggle">Archipelago Live Tracking</summary>
+    <div class="ap-tracker-fields">
+      <input id="apServerInput" placeholder="Server address (e.g. archipelago.gg:38281)">
+      <input id="apSlotNameInput" placeholder="Slot name">
+      <input id="apPasswordInput" type="password" placeholder="Password (if required)">
+      <button id="apConnectBtn" type="button">Connect</button>
+      <div id="apTrackerStatus" class="control-hint"></div>
+    </div>
+  </details>
+
+  <div id="apTrackerLive" class="hidden in-game-sliders">
+    <span id="apTrackerLiveStatus"></span>
+    <button id="apDisconnectBtn" type="button" class="game-ui">Stop Tracking</button>
   </div>
 
 </div>
@@ -293,8 +332,11 @@
 <script src="js/state.js"></script>
 <script src="js/rng.js"></script>
 <script src="js/utils.js"></script>
+<script src="js/miniZip.js"></script>
 <script src="js/boardRender.js"></script>
 <script src="js/gameModes.js"></script>
 <script src="js/ui.js"></script>
+<script src="js/sphereData.js"></script>
+<script src="js/apTracker.js"></script>
 </body>
 </html>
