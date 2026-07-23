@@ -11,18 +11,22 @@ function updateModeUI() {
 
   if (selectedMode === "rush") {
     rushLimit.style.display = "inline-flex";
+    pointsCheckbox.parentElement.style.display = "";
   }
 
   if (selectedMode === "classic") {
     traditionalOptions.style.display = "inline-flex";
+    pointsCheckbox.parentElement.style.display = "";
   }
 
   if (selectedMode === "exploration") {
     explorationOptions.style.display = "inline-flex";
+    pointsCheckbox.parentElement.style.display = "";
   }
 
   if (selectedMode === "roguelike") {
     roguelikeOptions.style.display = "inline-flex";
+    pointsCheckbox.parentElement.style.display = "none";
   }
 }
 

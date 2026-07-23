@@ -77,6 +77,37 @@ function setSquareState(element, id, newState) {
   if (newState === 2) element.classList.add("completed");
 }
 
+// For points mode
+function addPointsBar(div, obj, variant = "default") {
+  if (!pointsMode) return;
+  div.classList.add("has-points");
+  const bar = document.createElement("div");
+  bar.className =
+    variant === "rush" ? "points-bar points-bar-rush" : "points-bar";
+  bar.textContent = `${obj.points ?? 0} points`;
+  div.appendChild(bar);
+}
+
+// Helper function for icon/text mode toggle
+function toggleIconOrText(obj) {
+  if (iconsEnabled && obj.icon) {
+    const img = document.createElement("img");
+    img.src = obj.icon;
+    img.alt = obj.name;
+    return img;
+  }
+
+  const wrapper = document.createElement("span");
+  wrapper.className = "obj-text";
+
+  const inner = document.createElement("span");
+  inner.className = "obj-text-inner";
+  inner.textContent = obj.name;
+
+  wrapper.appendChild(inner);
+  return wrapper;
+}
+
 // ================= Classic Bingo ====================
 
 // Start classic bingo
@@ -105,14 +136,10 @@ function renderTraditionalBoard() {
     div.dataset.id = index;
 
     // icons or text
-    if (iconsEnabled && obj.icon) {
-      const img = document.createElement("img");
-      img.src = obj.icon;
-      img.alt = obj.name;
-      div.appendChild(img);
-    } else {
-      div.textContent = obj.name;
-    }
+    div.appendChild(toggleIconOrText(obj));
+
+    // points mode
+    addPointsBar(div, obj);
 
     div.dataset.id = `bingo-${index}`;
 
@@ -176,6 +203,7 @@ function renderTraditionalBoard() {
     if (state === 2) div.classList.add("completed");
   });
 
+  fitAllTileText(board);
   updateBingoHighlights(bingoSize);
 }
 
@@ -428,14 +456,10 @@ function renderExplorationBoard() {
         const obj = explorationBoard[r][c];
 
         // icons or text
-        if (iconsEnabled && obj.icon) {
-          const img = document.createElement("img");
-          img.src = obj.icon;
-          img.alt = obj.name;
-          div.appendChild(img);
-        } else {
-          div.textContent = obj.name;
-        }
+        div.appendChild(toggleIconOrText(obj));
+
+        // points mode
+        addPointsBar(div, obj);
 
         if (markedMap[r][c]) {
           div.classList.add("marked");
@@ -496,6 +520,8 @@ function renderExplorationBoard() {
       board.appendChild(div);
     }
   }
+
+  fitAllTileText(board);
   updateBingoHighlights(boardSize);
 }
 
@@ -576,14 +602,10 @@ function renderRushBoard() {
     }
 
     // icons or text
-    if (iconsEnabled && obj.icon) {
-      const img = document.createElement("img");
-      img.src = obj.icon;
-      img.alt = obj.name;
-      div.appendChild(img);
-    } else {
-      div.textContent = obj.name;
-    }
+    div.appendChild(toggleIconOrText(obj));
+
+    // points mode
+    addPointsBar(div, obj, "rush");
 
     // make rush board bigger than other modes
     div.style.width = "120px";
@@ -626,6 +648,8 @@ function renderRushBoard() {
 
     board.appendChild(div);
   });
+
+  fitAllTileText(board);
 }
 
 // Completing square in rush mode
@@ -633,10 +657,6 @@ function completeRound(chosenObjective, element) {
   if (!gameStarted) return;
 
   element.classList.add("completed");
-
-  // update score
-  scoreState.rushRounds = completedObjectives.length + 1;
-  renderScore();
 
   // log chosen square
   const roundDiv = document.createElement("div");
@@ -661,6 +681,10 @@ function completeRound(chosenObjective, element) {
   });
 
   completedList.appendChild(roundDiv);
+
+  // update score
+  scoreState.rushRounds = completedObjectives.length;
+  renderScore();
 
   updateProgress();
 
@@ -1032,15 +1056,10 @@ function applyIconMode(iconsEnabled) {
 
     div.innerHTML = "";
 
-    if (iconsEnabled && obj.icon) {
-      const img = document.createElement("img");
-      img.src = obj.icon;
-      img.alt = obj.name;
-      img.style.width = "100px";
-      img.style.height = "100px";
-      div.appendChild(img);
-    } else {
-      div.textContent = obj.name;
-    }
+    div.appendChild(toggleIconOrText(obj));
+
+    addPointsBar(div, obj, "rush");
   });
+
+  fitAllTileText(board);
 }

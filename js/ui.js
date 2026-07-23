@@ -25,6 +25,12 @@ const shinyCheckbox = document.getElementById("shinyCheckbox");
 const shinyInput = document.getElementById("shinyInput");
 const shinyCountInput = document.getElementById("shinyCount");
 
+const pointsCheckbox = document.getElementById("pointsCheckbox");
+
+pointsCheckbox.addEventListener("change", (e) => {
+  pointsMode = e.target.checked;
+});
+
 const bingoLogicToggles = document.querySelectorAll(".bingoLogicToggle");
 
 bingoLogicToggles.forEach((toggle) => {
@@ -40,6 +46,7 @@ let restoringFromURL = false;
 async function handleInitialLoad() {
   const params = new URLSearchParams(window.location.search);
   const isGameView = params.get("view") === "game";
+  const requestedPointsMode = params.get("pm") === "1";
 
   restoringFromURL = true;
   applySettingsFromURL();
@@ -48,6 +55,10 @@ async function handleInitialLoad() {
   if (isGameView) {
     const success = await loadObjectives();
     if (success) {
+      if (params.has("pm") && !pointsCheckbox.disabled) {
+        pointsMode = requestedPointsMode;
+        pointsCheckbox.checked = pointsMode;
+      }
       generateGame();
     }
   }
@@ -77,6 +88,10 @@ function shouldHideBoard() {
 function setInitialUI() {
   if (shinyCheckbox) {
     shinyCheckbox.checked = shinyMode;
+  }
+
+  if (pointsCheckbox) {
+    pointsCheckbox.checked = pointsMode;
   }
 
   if (bingoLogicToggles.length) {
@@ -247,16 +262,23 @@ document.getElementById("jsonUpload").addEventListener("change", async (e) => {
   }
 });
 
+let loadRequestToken = 0;
+
 // Get selected Json list. Load tags if any
 async function loadObjectives() {
   const listFile = listSelect.value;
   if (!listFile) return;
 
+  const requestToken = ++loadRequestToken;
+
   try {
     const response = await fetch(`lists/${listFile}`);
     if (!response.ok) throw new Error("Failed to load list");
 
-    rawObjectives = normalizeObjectives(await response.json());
+    const data = await response.json();
+    if (requestToken !== loadRequestToken) return false;
+
+    rawObjectives = normalizeObjectives(data);
 
     setupTagFilters(rawObjectives);
     if (urlDisabledTags.length) {
@@ -274,11 +296,24 @@ async function loadObjectives() {
   }
 }
 
+// Disable Points mode if list has no points
+function updatePointsAvailability(available) {
+  pointsCheckbox.disabled = !available;
+  pointsCheckbox.title = available ? "" : "This list has no point values";
+  pointsCheckbox.parentElement.classList.toggle("disabled-option", !available);
+
+  if (!available && pointsCheckbox.checked) {
+    pointsCheckbox.checked = false;
+    pointsMode = false;
+  }
+}
+
 // Display number of objectives and if list has icons
 function updateListPreview(objectives) {
   if (!objectives || !objectives.length) return;
 
   const iconCount = objectives.filter((obj) => obj.icon).length;
+  const pointsCount = objectives.filter((obj) => obj.points).length;
   const preview = document.getElementById("listPreview");
 
   preview.innerHTML = `
@@ -288,6 +323,8 @@ function updateListPreview(objectives) {
   `;
 
   preview.style.display = "block";
+
+  updatePointsAvailability(pointsCount > 0);
 }
 
 // Objective List Dropdown. Load Json list or display file selector
@@ -446,6 +483,12 @@ function applySettingsFromURL() {
     syncShinyUI(shinyEnabled, shinyCount);
 
     restoringFromURL = false;
+  }
+
+  // points mode
+  if (params.has("pm")) {
+    pointsMode = params.get("pm") === "1";
+    pointsCheckbox.checked = pointsMode;
   }
 }
 

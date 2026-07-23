@@ -157,6 +157,17 @@
         <input id="shinyCount" type="number" min="1" placeholder="Default">
       </label>
     </div>
+
+    <label class="custom-checkbox">
+      <span class="label-text">Points:
+        <div class="control-hint">
+          Displays point values of goals and counts total points
+        </div>
+      </span>
+       <input type="checkbox" id="pointsCheckbox">
+      <span class="slider"></span>
+    </label>
+
   </div>
 
   <div class="control-row" id="output">
@@ -275,6 +286,9 @@
     <h4>Modifiers</h4>
   
     - <b>Shiny Goals:</b> If enabled, will set random squares to "Shiny", putting a special border around goals. 
+    <br>
+    - <b>Points:</b> If enabled, will display point values of objectives and add total points of completed squares to the score. If a list has no point values, 
+    the toggle will be disabled. (Not available for Roguelike Mode)
     <br><br>
 
     <h4>Archipelago (AP)</h4>
@@ -307,6 +321,9 @@
     <br>
     Roguelike based on mode by butchie1331: 
     <a href="https://butchie1331.github.io/hk-exploration-bingo" target="_blank">HK Exploration Bingo</a>
+    <br>
+    Points based on Darts mode by Codename_Geek: 
+    <a href="https://github.com/Dee-Ayy/KH2Tracker">KH2 Tracker</a>
     <br><br>
 
     <hr>

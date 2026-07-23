@@ -18,9 +18,14 @@ function normalizeObjectives(list) {
     if (Array.isArray(obj.tags)) tags = obj.tags;
     else if (typeof obj.tag === "string") tags = [obj.tag];
 
+    const points = Number.isInteger(obj.points)
+      ? obj.points
+      : parseInt(obj.points, 10) || 0;
+
     return {
       ...obj,
       tags,
+      points,
       id:
         obj.id ??
         obj.name
@@ -69,6 +74,7 @@ function buildShareURL(isGameLink = false) {
   params.set("m", selectedMode);
   params.set("s", seedInput.value);
   params.set("sm", shinyMode ? "1" : "0");
+  params.set("pm", pointsMode ? "1" : "0");
 
   const shinyInput = document.getElementById("shinyCount")?.value;
   if (shinyMode && shinyInput !== "") {
@@ -115,6 +121,22 @@ function copyGameLink() {
   alert("Board link copied!");
 }
 
+// Shrink text to fit
+function fitAllTileText(container) {
+  requestAnimationFrame(() => {
+    container.querySelectorAll(".obj-text-inner").forEach((el) => {
+      const wrapper = el.parentElement;
+      const minFontSize = 10;
+      let fontSize = parseFloat(getComputedStyle(el).fontSize);
+
+      while (el.scrollHeight > wrapper.clientHeight && fontSize > minFontSize) {
+        fontSize -= 0.5;
+        el.style.fontSize = `${fontSize}px`;
+      }
+    });
+  });
+}
+
 // User input shiny count or default
 function getShinyCount(boardSize, inputValue) {
   if (inputValue === "" || inputValue === null) {
@@ -159,37 +181,79 @@ function pickShinyRounds(totalRounds, shinyCount, rng) {
   return result;
 }
 
-// Display current score depending on mode
-function renderScore() {
-  const score = document.getElementById("score");
+// Points mode
+function calculatePoints() {
+  if (!pointsMode) return 0;
+  let total = 0;
 
   if (selectedMode === "classic") {
-    if (!bingoLogic) {
-      score.textContent = "";
-      return;
-    }
-
-    const count = scoreState.bingoLines;
-    score.textContent =
-      count === 0
-        ? "Score: 0 Lines"
-        : `Score: ${count} Line${count > 1 ? "s" : ""}`;
+    bingoBoard.forEach((obj, index) => {
+      if (squareStates[`bingo-${index}`] === 2) total += obj.points ?? 0;
+    });
   }
 
   if (selectedMode === "exploration") {
-    if (bingoLogic) {
-      const count = scoreState.bingoLines;
-      score.textContent =
-        count === 0
-          ? "Score: 0 Lines"
-          : `Score: ${count} Line${count > 1 ? "s" : ""}`;
-    } else {
-      score.textContent = `Score: ${scoreState.squaresCompleted}`;
+    for (let r = 0; r < boardSize; r++) {
+      for (let c = 0; c < boardSize; c++) {
+        const id = `fog-${r}-${c}`;
+        if (visibleMap[r][c] && squareStates[id] === 2) {
+          total += explorationBoard[r][c].points ?? 0;
+        }
+      }
     }
   }
 
   if (selectedMode === "rush") {
-    score.textContent = `Score: ${scoreState.rushRounds}`;
+    completedObjectives.forEach((obj) => {
+      total += obj.points ?? 0;
+    });
+  }
+
+  return total;
+}
+
+// Display current score depending on mode
+function renderScore() {
+  const score = document.getElementById("score");
+  const points = calculatePoints();
+
+  if (selectedMode === "classic") {
+    if (!bingoLogic && !pointsMode) {
+      score.textContent = "";
+      return;
+    }
+    const parts = [];
+    if (bingoLogic) {
+      const count = scoreState.bingoLines;
+      parts.push(`${count} Line${count === 1 ? "" : "s"}`);
+    }
+    if (pointsMode) {
+      parts.push(`${points} Point${points === 1 ? "" : "s"}`);
+    }
+    score.textContent = `Score: ${parts.join(" | ")}`;
+  }
+
+  if (selectedMode === "exploration") {
+    const parts = [];
+    if (bingoLogic) {
+      const count = scoreState.bingoLines;
+      parts.push(`${count} Line${count === 1 ? "" : "s"}`);
+    } else if (!pointsMode) {
+      parts.push(`${scoreState.squaresCompleted}`);
+    }
+    if (pointsMode) {
+      parts.push(`${points} Point${points === 1 ? "" : "s"}`);
+    }
+    score.textContent = `Score: ${parts.join(" | ")}`;
+  }
+
+  if (selectedMode === "rush") {
+    const rounds = scoreState.rushRounds;
+    const parts = [`${rounds} Round${rounds === 1 ? "" : "s"}`];
+    if (pointsMode) {
+      parts.push(`${points} Point${points === 1 ? "" : "s"}`);
+    }
+    score.textContent = `Score: ${parts.join(" | ")}`;
   }
 }
 

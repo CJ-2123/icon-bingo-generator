@@ -32,6 +32,7 @@ let scoreState = {
 };
 
 let shinyMode = false;
+let pointsMode = false;
 let bingoLogic = true;
 let iconsEnabled = true;
 
