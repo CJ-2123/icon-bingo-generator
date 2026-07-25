@@ -151,6 +151,20 @@ Based on Shiny Goals by DotoPotato: Lockout.Live
 
 ![Shiny Goals](icons/readme/shiny-goals.png)
 
+#### Points
+
+![Points Generator](icons/readme/points-toggle.png)
+
+If enabled, will display point values for objectives and add total points of completed squares to the score.
+
+- If a list has 0 objectives with point values, the toggle will be disabled
+- If a list has some objectives with point values, the ones without a value will default to 0 points
+- Not available for Roguelike Mode
+
+Based on Darts Mode by Codename_Geek for the KH2 Tracker.
+
+![Points Bingo](icons/readme/points-bingo.png)
+
 ### Custom Bingo Lists
 
 ![Custom](icons/readme/custom.png)
@@ -197,17 +211,22 @@ The .json file must be formatted as follows:
 ]
 ```
 
-The list must have a "name" property for each objective. "icon" is optional. Custom icons are not supported yet, but icons already on the website are useable in custom lists. [This folder](https://github.com/CJ-2123/icon-bingo-generator/tree/main/icons) contains all of the icons on the site.
+The list must have a "name" property for each objective. "icon" and "points" are optional.
+
+- Custom icons are not supported yet, but icons already on the website are useable in custom lists. [This folder](https://github.com/CJ-2123/icon-bingo-generator/tree/main/icons) contains all of the icons on the site.
+- Points will always be an integer (Negative numbers allowed. Non-integers will be converted.)
 
 ```
 [
   {
     "name": "Objective 1",
-    "icon": "icons/kh1-ap/Clayton.webp"
+    "icon": "icons/kh1-ap/Clayton.webp",
+    "points": 5
   },
   {
     "name": "Objective 2",
-    "icon": "icons/kh2-bunter/ShanYu.webp"
+    "icon": "icons/kh2-bunter/ShanYu.webp",
+    "points": 7
   }
   // more goals here
 ]
