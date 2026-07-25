@@ -1,620 +1,773 @@
 [
   {
     "name": "Defeat a boss",
-    "icon": "icons/kh2-generic/boss-1.webp"
+    "icon": "icons/kh2-generic/boss-1.webp",
+    "points": 2
   },
   {
     "name": "Defeat 2 Bosses",
-    "icon": "icons/kh2-generic/boss-2.webp"
+    "icon": "icons/kh2-generic/boss-2.webp",
+    "points": 4
   },
   {
     "name": "Defeat 3 Bosses",
-    "icon": "icons/kh2-generic/boss-3.webp"
+    "icon": "icons/kh2-generic/boss-3.webp",
+    "points": 6
   },
   {
     "name": "Defeat a boss with fire",
-    "icon": "icons/kh2-generic/boss-fire.webp"
+    "icon": "icons/kh2-generic/boss-fire.webp",
+    "points": 3
   },
   {
     "name": "Defeat a boss with blizzard",
-    "icon": "icons/kh2-generic/boss-blizzard.webp"
+    "icon": "icons/kh2-generic/boss-blizzard.webp",
+    "points": 3
   },
   {
     "name": "Defeat a boss with thunder",
-    "icon": "icons/kh2-generic/boss-thunder.webp"
+    "icon": "icons/kh2-generic/boss-thunder.webp",
+    "points": 3
   },
   {
     "name": "Defeat a boss with a ground attack",
-    "icon": "icons/kh2-generic/boss-ground.webp"
+    "icon": "icons/kh2-generic/boss-ground.webp",
+    "points": 2
   },
   {
     "name": "Defeat a boss with an air attack",
-    "icon": "icons/kh2-generic/boss-air.webp"
+    "icon": "icons/kh2-generic/boss-air.webp",
+    "points": 2
   },
   {
     "name": "Defeat a boss while a summon is out",
-    "icon": "icons/kh2-generic/boss-summon.webp"
+    "icon": "icons/kh2-generic/boss-summon.webp",
+    "points": 3
   },
   {
     "name": "Defeat a boss with an ultimate weapon equipped on a party member",
-    "icon": "icons/kh1-generic/boss-ultimate.webp"
+    "icon": "icons/kh1-generic/boss-ultimate.webp",
+    "points": 4
   },
   {
     "name": "Defeat a boss with the wooden sword",
-    "icon": "icons/kh1-generic/boss-wooden.webp"
+    "icon": "icons/kh1-generic/boss-wooden.webp",
+    "points": 3
   },
   {
     "name": "Defeat a boss with a belt and ring equipped",
-    "icon": "icons/kh2-generic/boss-accessories.webp"
+    "icon": "icons/kh2-generic/boss-accessories.webp",
+    "points": 3
   },
   {
     "name": "Beat Riku with the Wooden Sword",
-    "icon": "icons/kh1-generic/riku-wooden.webp"
+    "icon": "icons/kh1-generic/riku-wooden.webp",
+    "points": 4
   },
   {
     "name": "Kill an enemy while it is stopped",
-    "icon": "icons/kh1-generic/enemy-stop.webp"
+    "icon": "icons/kh1-generic/enemy-stop.webp",
+    "points": 3
   },
   {
     "name": "Reflect something with Aero",
-    "icon": "icons/kh1-generic/aero-reflect.webp"
+    "icon": "icons/kh1-generic/aero-reflect.webp",
+    "points": 5
   },
   {
     "name": "Kill an enemy with Aero damage",
-    "icon": "icons/kh1-generic/enemy-aero.webp"
+    "icon": "icons/kh1-generic/enemy-aero.webp",
+    "points": 4
   },
   {
     "name": "Flatten an enemy with Gravity",
-    "icon": "icons/kh1-generic/flatten-gravity.webp"
+    "icon": "icons/kh1-generic/flatten-gravity.webp",
+    "points": 3
   },
   {
     "name": "Kill an enemy with Gravity",
-    "icon": "icons/kh1-generic/enemy-gravity.webp"
+    "icon": "icons/kh1-generic/enemy-gravity.webp",
+    "points": 3
   },
   {
     "name": "Find 1 magic element",
-    "icon": "icons/kh2-generic/magic-1.webp"
+    "icon": "icons/kh2-generic/magic-1.webp",
+    "points": 2
   },
   {
     "name": "Find 2 magic elements",
-    "icon": "icons/kh2-generic/magic-2.webp"
+    "icon": "icons/kh2-generic/magic-2.webp",
+    "points": 4
   },
   {
     "name": "Find 3 magic elements",
-    "icon": "icons/kh2-generic/magic-3.webp"
+    "icon": "icons/kh2-generic/magic-3.webp",
+    "points": 6
   },
   {
     "name": "Find a Keyblade",
-    "icon": "icons/kh2-generic/Keyblade.webp"
+    "icon": "icons/kh2-generic/Keyblade.webp",
+    "points": 2
   },
   {
     "name": "Activate 3 Trinities",
-    "icon": "icons/kh1-generic/trinity-3.webp"
+    "icon": "icons/kh1-generic/trinity-3.webp",
+    "points": 3
   },
   {
     "name": "Activate 5 Trinities",
-    "icon": "icons/kh1-generic/trinity-5.webp"
+    "icon": "icons/kh1-generic/trinity-5.webp",
+    "points": 4
   },
   {
     "name": "Activate 7 Trinities",
-    "icon": "icons/kh1-generic/trinity-7.webp"
+    "icon": "icons/kh1-generic/trinity-7.webp",
+    "points": 5
   },
   {
     "name": "Complete a 100AW Minigame",
-    "icon": "icons/kh2-generic/hundred-acre-wood.webp"
+    "icon": "icons/kh2-generic/hundred-acre-wood.webp",
+    "points": 2
   },
   {
     "name": "Don't let bees pop Pooh's Balloon",
-    "icon": "icons/kh1-ap/Piglet.webp"
+    "icon": "icons/kh1-ap/Piglet.webp",
+    "points": 2
   },
   {
     "name": "Don't let Tigger stomp any carrots",
-    "icon": "icons/kh1-ap/Rabbit.webp"
+    "icon": "icons/kh1-ap/Rabbit.webp",
+    "points": 2
   },
   {
     "name": "Send Pooh at least 30m off the swing",
-    "icon": "icons/kh1-ap/Pooh.webp"
+    "icon": "icons/kh1-ap/Pooh.webp",
+    "points": 3
   },
   {
     "name": "Tigger's Giant Pot",
-    "icon": "icons/kh1-ap/Tigger.webp"
+    "icon": "icons/kh1-ap/Tigger.webp",
+    "points": 5
   },
   {
     "name": "Pooh's Muddy Path",
-    "icon": "icons/kh1-ap/Eeyore.webp"
+    "icon": "icons/kh1-ap/Eeyore.webp",
+    "points": 9
   },
   {
     "name": "Level up Sora",
-    "icon": "icons/kh1-generic/sora-level.webp"
+    "icon": "icons/kh1-generic/sora-level.webp",
+    "points": 2
   },
   {
     "name": "Fill Bambi's bar",
-    "icon": "icons/kh1-ap/Bambi.webp"
+    "icon": "icons/kh1-ap/Bambi.webp",
+    "points": 3
   },
   {
     "name": "Use Dumbo to reach a ledge",
-    "icon": "icons/kh1-ap/Dumbo.webp"
+    "icon": "icons/kh1-ap/Dumbo.webp",
+    "points": 3
   },
   {
     "name": "Use Genie's Showtime on an enemy",
-    "icon": "icons/kh1-ap/Genie.webp"
+    "icon": "icons/kh1-ap/Genie.webp",
+    "points": 3
   },
   {
     "name": "Use Mushu's Fire Breath on an enemy",
-    "icon": "icons/kh1-ap/Mushu.webp"
+    "icon": "icons/kh1-ap/Mushu.webp",
+    "points": 3
   },
   {
     "name": "Use Simba's Proud Roar on an enemy",
-    "icon": "icons/kh1-ap/Simba.webp"
+    "icon": "icons/kh1-ap/Simba.webp",
+    "points": 3
   },
   {
     "name": "Use Tinker Bell's Auto-Life ability",
-    "icon": "icons/kh1-ap/TinkerBell.webp"
+    "icon": "icons/kh1-ap/TinkerBell.webp",
+    "points": 3
   },
   {
     "name": "Use Trinity Limit on a group of enemies",
-    "icon": "icons/kh1-generic/trinity.webp"
+    "icon": "icons/kh1-generic/trinity.webp",
+    "points": 3
   },
   {
     "name": "Let Donald or Goofy kill an enemy",
-    "icon": "icons/kh2-generic/dg-enemy.webp"
+    "icon": "icons/kh2-generic/dg-enemy.webp",
+    "points": 2
   },
   {
     "name": "Let a party member kill an enemy (Not Donald or Goofy)",
-    "icon": "icons/kh1-generic/party-enemy.webp"
+    "icon": "icons/kh1-generic/party-enemy.webp",
+    "points": 2
   },
   {
     "name": "Synth 3 unique items",
-    "icon": "icons/kh2-generic/synth-3.webp"
+    "icon": "icons/kh2-generic/synth-3.webp",
+    "points": 3
   },
   {
     "name": "Complete a Cup",
-    "icon": "icons/kh1-generic/cups.webp"
+    "icon": "icons/kh1-generic/cups.webp",
+    "points": 5
   },
   {
     "name": "Complete a timed cup",
-    "icon": "icons/kh1-generic/timed-cups.webp"
+    "icon": "icons/kh1-generic/timed-cups.webp",
+    "points": 6
   },
   {
     "name": "Complete a solo cup",
-    "icon": "icons/kh1-generic/solo-cups.webp"
+    "icon": "icons/kh1-generic/solo-cups.webp",
+    "points": 6
   },
   {
     "name": "Beat Phil Cup",
-    "icon": "icons/kh1-generic/phil-cup.webp"
+    "icon": "icons/kh1-generic/phil-cup.webp",
+    "points": 5
   },
   {
     "name": "Beat Pegasus Cup",
-    "icon": "icons/kh1-generic/pegasus-cup.webp"
+    "icon": "icons/kh1-generic/pegasus-cup.webp",
+    "points": 5
   },
   {
     "name": "Beat Hercules Cup",
-    "icon": "icons/kh1-generic/herc-cup.webp"
+    "icon": "icons/kh1-generic/herc-cup.webp",
+    "points": 5
   },
   {
     "name": "Hades Cup 10th Seed",
     "icon": "icons/kh1-ap/HadesCup10.webp",
-    "tags": ["Hades Cup"]
+    "tags": ["Hades Cup"],
+    "points": 9
   },
   {
     "name": "Hades Cup 20th Seed",
     "icon": "icons/kh1-ap/HadesCup20.webp",
-    "tags": ["Hades Cup"]
+    "tags": ["Hades Cup"],
+    "points": 8
   },
   {
     "name": "Hades Cup 30th Seed",
     "icon": "icons/kh1-ap/HadesCup30.webp",
-    "tags": ["Hades Cup"]
+    "tags": ["Hades Cup"],
+    "points": 7
   },
   {
     "name": "Hades Cup 40th Seed",
     "icon": "icons/kh1-ap/HadesCupSeed40.webp",
-    "tags": ["Hades Cup"]
+    "tags": ["Hades Cup"],
+    "points": 6
   },
   {
     "name": "Hades Cup 44th Seed",
     "icon": "icons/kh1-ap/HadesCup44.webp",
-    "tags": ["Hades Cup"]
+    "tags": ["Hades Cup"],
+    "points": 5
   },
   {
     "name": "Hades Cup 1st Seed",
     "icon": "icons/kh1-ap/HadesCupSeed1.webp",
-    "tags": ["Hades Cup"]
+    "tags": ["Hades Cup"],
+    "points": 10
   },
   {
     "name": "Jungle Slider 10 Fruits",
-    "icon": "icons/kh1-ap/Fruit10.webp"
+    "icon": "icons/kh1-ap/Fruit10.webp",
+    "points": 3
   },
   {
     "name": "Jungle Slider 20 Fruits",
-    "icon": "icons/kh1-ap/Fruit20.webp"
+    "icon": "icons/kh1-ap/Fruit20.webp",
+    "points": 3
   },
   {
     "name": "Jungle Slider 30 Fruits",
-    "icon": "icons/kh1-ap/Fruit30.webp"
+    "icon": "icons/kh1-ap/Fruit30.webp",
+    "points": 3
   },
   {
     "name": "Jungle Slider 40 Fruits",
-    "icon": "icons/kh1-ap/Fruit40.webp"
+    "icon": "icons/kh1-ap/Fruit40.webp",
+    "points": 3
   },
   {
     "name": "Jungle Slider 50 Fruits",
-    "icon": "icons/kh1-ap/Fruit50.webp"
+    "icon": "icons/kh1-ap/Fruit50.webp",
+    "points": 3
   },
   {
     "name": "Buy 20 Potions",
-    "icon": "icons/kh2-generic/potion-20.webp"
+    "icon": "icons/kh2-generic/potion-20.webp",
+    "points": 3
   },
   {
     "name": "Buy 7 unique items from a shop",
-    "icon": "icons/kh2-generic/item-7.webp"
+    "icon": "icons/kh2-generic/item-7.webp",
+    "points": 4
   },
   {
     "name": "Sell items to the Ducks for 1000 Munny",
-    "icon": "icons/kh1-generic/ducks-munny.webp"
+    "icon": "icons/kh1-generic/ducks-munny.webp",
+    "points": 4
   },
   {
     "name": "Die to Sephiroth",
-    "icon": "icons/kh1-generic/sephiroth.webp"
+    "icon": "icons/kh1-generic/sephiroth.webp",
+    "points": 3
   },
   {
     "name": "Die to a Superboss",
-    "icon": "icons/kh1-generic/death.webp"
+    "icon": "icons/kh1-generic/death.webp",
+    "points": 2
   },
   {
     "name": "Heal a party member with Cure",
-    "icon": "icons/kh2-generic/dg-cure.webp"
+    "icon": "icons/kh2-generic/dg-cure.webp",
+    "points": 2
   },
   {
     "name": "Use a Potion, Hi-Potion, Ether, and Elixir",
-    "icon": "icons/kh1-generic/items-1.webp"
+    "icon": "icons/kh1-generic/items-1.webp",
+    "points": 2
   },
   {
     "name": "Use any Mega item",
-    "icon": "icons/kh2-generic/items-2.webp"
+    "icon": "icons/kh2-generic/items-2.webp",
+    "points": 2
   },
   {
     "name": "Use a Tent, Camping Set, and Cottage",
-    "icon": "icons/kh1-generic/items-3.webp"
+    "icon": "icons/kh1-generic/items-3.webp",
+    "points": 2
   },
   {
     "name": "Equip Donald and Goofy with their Dream Weapons",
-    "icon": "icons/kh1-generic/dg-dream-weapons.webp"
+    "icon": "icons/kh1-generic/dg-dream-weapons.webp",
+    "points": 3
   },
   {
     "name": "Use a Stat Boost on Donald or Goofy",
-    "icon": "icons/kh1-generic/dg-boost.webp"
+    "icon": "icons/kh1-generic/dg-boost.webp",
+    "points": 2
   },
   {
     "name": "Equip an EXP accessory",
-    "icon": "icons/kh1-generic/exp-accessory.webp"
+    "icon": "icons/kh1-generic/exp-accessory.webp",
+    "points": 3
   },
   {
     "name": "Obtain 4 Rings",
-    "icon": "icons/kh1-generic/rings-4.webp"
+    "icon": "icons/kh1-generic/rings-4.webp",
+    "points": 4
   },
   {
     "name": "Kill 15 types of heartless",
-    "icon": "icons/kh2-generic/heartless-15.webp"
+    "icon": "icons/kh2-generic/heartless-15.webp",
+    "points": 2
   },
   {
     "name": "Kill 2 unique Pureblood Heartless",
-    "icon": "icons/kh1-generic/pureblood-2.webp"
+    "icon": "icons/kh1-generic/pureblood-2.webp",
+    "points": 3
   },
   {
     "name": "Kill 3 unique Pureblood Heartless",
-    "icon": "icons/kh1-generic/pureblood-3.webp"
+    "icon": "icons/kh1-generic/pureblood-3.webp",
+    "points": 4
   },
   {
     "name": "Kill 4 unique Pureblood Heartless",
-    "icon": "icons/kh1-generic/pureblood-4.webp"
+    "icon": "icons/kh1-generic/pureblood-4.webp",
+    "points": 5
   },
   {
     "name": "Defeat a Blue Rhapsody, Green Requiem, Red Nocturne, and Yellow Opera",
-    "icon": "icons/kh1-generic/enemy-colors.webp"
+    "icon": "icons/kh1-generic/enemy-colors.webp",
+    "points": 4
   },
   {
     "name": "Defeat all enemies in the room before Final Rest",
-    "icon": "icons/kh1-generic/final-rest.webp"
+    "icon": "icons/kh1-generic/final-rest.webp",
+    "points": 10
   },
   {
     "name": "Seal a Keyhole",
-    "icon": "icons/kh1-generic/keyhole.webp"
+    "icon": "icons/kh1-generic/keyhole.webp",
+    "points": 3
   },
   {
     "name": "Complete one section of Jiminy's Journal",
-    "icon": "icons/kh1-generic/journal.webp"
+    "icon": "icons/kh1-generic/journal.webp",
+    "points": 10
   },
   {
     "name": "Possess 7 Unique Keyblades Simultaneously",
-    "icon": "icons/kh1-generic/keyblades-7.webp"
+    "icon": "icons/kh1-generic/keyblades-7.webp",
+    "points": 3
   },
   {
     "name": "Possess 13 Unique Keyblades Simultaneously",
-    "icon": "icons/kh1-generic/keyblades-13.webp"
+    "icon": "icons/kh1-generic/keyblades-13.webp",
+    "points": 5
   },
   {
     "name": "Return puppies to their parents",
-    "icon": "icons/kh1-ap/Puppies.webp"
+    "icon": "icons/kh1-ap/Puppies.webp",
+    "points": 3
   },
   {
     "name": "Have 5000 Munny",
-    "icon": "icons/kh1-generic/5000-munny.webp"
+    "icon": "icons/kh1-generic/5000-munny.webp",
+    "points": 5
   },
   {
     "name": "Reach 40 STR with Sora",
-    "icon": "icons/kh1-generic/40-str.webp"
+    "icon": "icons/kh1-generic/40-str.webp",
+    "points": 4
   },
   {
     "name": "Reach 10 MP with Sora",
-    "icon": "icons/kh1-generic/10-mp.webp"
+    "icon": "icons/kh1-generic/10-mp.webp",
+    "points": 4
   },
   {
     "name": "Beat Riku in a race",
-    "icon": "icons/kh1-generic/riku-race.webp"
+    "icon": "icons/kh1-generic/riku-race.webp",
+    "points": 2
   },
   {
     "name": "Beat Riku on Destiny Islands",
-    "icon": "icons/kh1-ap/RikuDI.webp"
+    "icon": "icons/kh1-ap/RikuDI.webp",
+    "points": 2
   },
   {
     "name": "Beat Tidus",
-    "icon": "icons/kh1-ap/Tidus.webp"
+    "icon": "icons/kh1-ap/Tidus.webp",
+    "points": 2
   },
   {
     "name": "Beat Selphie",
-    "icon": "icons/kh1-ap/Selphie.webp"
+    "icon": "icons/kh1-ap/Selphie.webp",
+    "points": 2
   },
   {
     "name": "Beat Wakka",
-    "icon": "icons/kh1-ap/Wakka.webp"
+    "icon": "icons/kh1-ap/Wakka.webp",
+    "points": 2
   },
   {
     "name": "Beat Destiny Islands 3v1",
-    "icon": "icons/kh1-ap/BeachFight.webp"
+    "icon": "icons/kh1-ap/BeachFight.webp",
+    "points": 3
   },
   {
     "name": "Get a ripe coconut from Destiny Islands",
-    "icon": "icons/kh1-generic/coconut.webp"
+    "icon": "icons/kh1-generic/coconut.webp",
+    "points": 2
   },
   {
     "name": "Open 3 Clams in Atlantica",
-    "icon": "icons/kh1-generic/clams-3.webp"
+    "icon": "icons/kh1-generic/clams-3.webp",
+    "points": 2
   },
   {
     "name": "Open 5 Clams in Atlantica",
-    "icon": "icons/kh1-generic/clams-5.webp"
+    "icon": "icons/kh1-generic/clams-5.webp",
+    "points": 2
   },
   {
     "name": "Open 7 Clams in Atlantica",
-    "icon": "icons/kh1-generic/clams-7.webp"
+    "icon": "icons/kh1-generic/clams-7.webp",
+    "points": 3
   },
   {
     "name": "Ride in Lock, Shock, and Barrel's Bathtub",
-    "icon": "icons/kh1-generic/bathtub.webp"
+    "icon": "icons/kh1-generic/bathtub.webp",
+    "points": 3
   },
   {
     "name": "50 Hits on a Rare Truffle",
-    "icon": "icons/kh1-generic/rare-truffle.webp"
+    "icon": "icons/kh1-generic/rare-truffle.webp",
+    "points": 4
   },
   {
     "name": "3 Unique Mushroom Arts",
-    "icon": "icons/kh1-generic/arts-3.webp"
+    "icon": "icons/kh1-generic/arts-3.webp",
+    "points": 2
   },
   {
     "name": "5 Unique Mushroom Arts",
-    "icon": "icons/kh1-generic/arts-5.webp"
+    "icon": "icons/kh1-generic/arts-5.webp",
+    "points": 3
   },
   {
     "name": "7 Unique Mushroom Arts",
-    "icon": "icons/kh1-generic/arts-7.webp"
+    "icon": "icons/kh1-generic/arts-7.webp",
+    "points": 4
   },
   {
     "name": "Show Merlin 7 Unique Spells",
-    "icon": "icons/kh1-generic/merlin.webp"
+    "icon": "icons/kh1-generic/merlin.webp",
+    "points": 5
   },
   {
     "name": "Defeat a Behemoth",
-    "icon": "icons/kh1-generic/behemoth-1.webp"
+    "icon": "icons/kh1-generic/behemoth-1.webp",
+    "points": 3
   },
   {
     "name": "Defeat 2 Behemoths",
-    "icon": "icons/kh1-generic/behemoth-2.webp"
+    "icon": "icons/kh1-generic/behemoth-2.webp",
+    "points": 6
   },
   {
     "name": "Open a Magic-Locked Chest",
-    "icon": "icons/kh1-generic/magic-chest.webp"
+    "icon": "icons/kh1-generic/magic-chest.webp",
+    "points": 4
   },
   {
     "name": "Open a chest in Traverse Town",
-    "icon": "icons/kh1-generic/chest-tt.webp"
+    "icon": "icons/kh1-generic/chest-tt.webp",
+    "points": 2
   },
   {
     "name": "Open a chest in Wonderland",
-    "icon": "icons/kh1-generic/chest-wonderland.webp"
+    "icon": "icons/kh1-generic/chest-wonderland.webp",
+    "points": 2
   },
   {
     "name": "Open a chest in Deep Jungle",
-    "icon": "icons/kh1-generic/chest-dj.webp"
+    "icon": "icons/kh1-generic/chest-dj.webp",
+    "points": 2
   },
   {
     "name": "Open a chest in Olympus Coliseum",
-    "icon": "icons/kh1-generic/chest-oc.webp"
+    "icon": "icons/kh1-generic/chest-oc.webp",
+    "points": 2
   },
   {
     "name": "Open a chest in Agrabah",
-    "icon": "icons/kh1-generic/chest-ag.webp"
+    "icon": "icons/kh1-generic/chest-ag.webp",
+    "points": 2
   },
   {
     "name": "Open a chest in Monstro",
-    "icon": "icons/kh1-generic/chest-monstro.webp"
+    "icon": "icons/kh1-generic/chest-monstro.webp",
+    "points": 2
   },
   {
     "name": "Open a chest in Atlantica",
-    "icon": "icons/kh1-generic/chest-at.webp"
+    "icon": "icons/kh1-generic/chest-at.webp",
+    "points": 2
   },
   {
     "name": "Open a chest in Neverland",
-    "icon": "icons/kh1-generic/chest-neverland.webp"
+    "icon": "icons/kh1-generic/chest-neverland.webp",
+    "points": 2
   },
   {
     "name": "Open a chest in Halloween Town",
-    "icon": "icons/kh1-generic/chest-ht.webp"
+    "icon": "icons/kh1-generic/chest-ht.webp",
+    "points": 2
   },
   {
     "name": "Open a chest in Hollow Bastion",
-    "icon": "icons/kh1-generic/chest-hb.webp"
+    "icon": "icons/kh1-generic/chest-hb.webp",
+    "points": 2
   },
   {
     "name": "Open a chest in End of the World",
-    "icon": "icons/kh1-generic/chest-eotw.webp"
+    "icon": "icons/kh1-generic/chest-eotw.webp",
+    "points": 2
   },
   {
     "name": "Activate a Trinity Mark in Traverse Town",
-    "icon": "icons/kh1-generic/trinity-tt.webp"
+    "icon": "icons/kh1-generic/trinity-tt.webp",
+    "points": 3
   },
   {
     "name": "Activate a Trinity Mark in Wonderland",
-    "icon": "icons/kh1-generic/trinity-wonderland.webp"
+    "icon": "icons/kh1-generic/trinity-wonderland.webp",
+    "points": 3
   },
   {
     "name": "Activate a Trinity Mark in Olympus Coliseum",
-    "icon": "icons/kh1-generic/trinity-oc.webp"
+    "icon": "icons/kh1-generic/trinity-oc.webp",
+    "points": 3
   },
   {
     "name": "Activate a Trinity Mark in Deep Jungle",
-    "icon": "icons/kh1-generic/trinity-dj.webp"
+    "icon": "icons/kh1-generic/trinity-dj.webp",
+    "points": 3
   },
   {
     "name": "Activate a Trinity Mark in Agrabah",
-    "icon": "icons/kh1-generic/trinity-ag.webp"
+    "icon": "icons/kh1-generic/trinity-ag.webp",
+    "points": 3
   },
   {
     "name": "Activate a Trinity Mark in Monstro",
-    "icon": "icons/kh1-generic/trinity-monstro.webp"
+    "icon": "icons/kh1-generic/trinity-monstro.webp",
+    "points": 3
   },
   {
     "name": "Activate a Trinity Mark in Atlantica",
-    "icon": "icons/kh1-generic/trinity-atlantica.webp"
+    "icon": "icons/kh1-generic/trinity-atlantica.webp",
+    "points": 3
   },
   {
     "name": "Activate a Trinity Mark in Halloween Town",
-    "icon": "icons/kh1-generic/trinity-ht.webp"
+    "icon": "icons/kh1-generic/trinity-ht.webp",
+    "points": 3
   },
   {
     "name": "Activate a Trinity Mark in Neverland",
-    "icon": "icons/kh1-generic/trinity-neverland.webp"
+    "icon": "icons/kh1-generic/trinity-neverland.webp",
+    "points": 3
   },
   {
     "name": "Activate a Trinity Mark in Hollow Bastion",
-    "icon": "icons/kh1-generic/trinity-hb.webp"
+    "icon": "icons/kh1-generic/trinity-hb.webp",
+    "points": 3
   },
   {
     "name": "Touch 2 Save Points in Traverse Town w/o warping",
-    "icon": "icons/kh1-generic/save-tt.webp"
+    "icon": "icons/kh1-generic/save-tt.webp",
+    "points": 3
   },
   {
     "name": "Touch 2 Save Points in Wonderland w/o warping",
-    "icon": "icons/kh1-generic/save-wonderland.webp"
+    "icon": "icons/kh1-generic/save-wonderland.webp",
+    "points": 2
   },
   {
     "name": "Touch 2 Save Points in Deep Jungle w/o warping",
-    "icon": "icons/kh1-generic/save-dj.webp"
+    "icon": "icons/kh1-generic/save-dj.webp",
+    "points": 2
   },
   {
     "name": "Touch 3 Save Points in Agrabah w/o warping",
-    "icon": "icons/kh1-generic/save-ag.webp"
+    "icon": "icons/kh1-generic/save-ag.webp",
+    "points": 2
   },
   {
     "name": "Touch 2 Save Points in Monstro w/o warping",
-    "icon": "icons/kh1-generic/save-monstro.webp"
+    "icon": "icons/kh1-generic/save-monstro.webp",
+    "points": 2
   },
   {
     "name": "Touch 2 Save Points in Atlantica w/o warping",
-    "icon": "icons/kh1-generic/save-at.webp"
+    "icon": "icons/kh1-generic/save-at.webp",
+    "points": 2
   },
   {
     "name": "Touch 2 Save Points in Neverland w/o warping",
-    "icon": "icons/kh1-generic/save-neverland.webp"
+    "icon": "icons/kh1-generic/save-neverland.webp",
+    "points": 3
   },
   {
     "name": "Touch 3 Save Points in Hollow Bastion w/o warping",
-    "icon": "icons/kh1-generic/save-hb.webp"
+    "icon": "icons/kh1-generic/save-hb.webp",
+    "points": 3
   },
   {
     "name": "Touch 3 Save Points in End of the World w/o warping",
-    "icon": "icons/kh1-generic/save-eotw.webp"
+    "icon": "icons/kh1-generic/save-eotw.webp",
+    "points": 4
   },
   {
     "name": "Talk to a Princess of Heart",
-    "icon": "icons/kh1-generic/princess.webp"
+    "icon": "icons/kh1-generic/princess.webp",
+    "points": 4
   },
   {
     "name": "Fly around the Clock Tower",
-    "icon": "icons/kh1-generic/clock-tower.webp"
+    "icon": "icons/kh1-generic/clock-tower.webp",
+    "points": 4
   },
   {
     "name": "At least 50 hits on Pink Agaricus",
-    "icon": "icons/kh1-generic/pink-agaricus.webp"
+    "icon": "icons/kh1-generic/pink-agaricus.webp",
+    "points": 4
   },
   {
     "name": "Visit Gepetto's House",
-    "icon": "icons/kh1-generic/gepetto.webp"
+    "icon": "icons/kh1-generic/gepetto.webp",
+    "points": 3
   },
   {
     "name": "Win the Black Ballade Game",
-    "icon": "icons/kh1-generic/black-ballade.webp"
+    "icon": "icons/kh1-generic/black-ballade.webp",
+    "points": 3
   },
   {
     "name": "Break every pot without waking the Pot Scorpion",
-    "icon": "icons/kh1-generic/pot-scorpion.webp"
+    "icon": "icons/kh1-generic/pot-scorpion.webp",
+    "points": 3
   },
   {
     "name": "Defeat all enemies at the Mad Tea Party",
-    "icon": "icons/kh1-generic/mad-tea-party.webp"
+    "icon": "icons/kh1-generic/mad-tea-party.webp",
+    "points": 2
   },
   {
     "name": "Run through Monstro from his Mouth to his Bowels",
-    "icon": "icons/kh1-generic/monstro.webp"
+    "icon": "icons/kh1-generic/monstro.webp",
+    "points": 2
   },
   {
     "name": "Defeat all enemies in the Treasure Room in Agrabah",
-    "icon": "icons/kh1-generic/treasure-room.webp"
+    "icon": "icons/kh1-generic/treasure-room.webp",
+    "points": 2
   },
   {
     "name": "Ride the Dolphin in Atlantica",
-    "icon": "icons/kh1-generic/dolphin.webp"
+    "icon": "icons/kh1-generic/dolphin.webp",
+    "points": 2
   },
   {
     "name": "Change the direction of the elevator in Hollow Bastion",
-    "icon": "icons/kh1-generic/elevator.webp"
+    "icon": "icons/kh1-generic/elevator.webp",
+    "points": 3
   },
   {
     "name": "Complete a Vine Swinging Course",
-    "icon": "icons/kh1-generic/vines.webp"
+    "icon": "icons/kh1-generic/vines.webp",
+    "points": 2
   },
   {
     "name": "Have Tarzan join your party",
-    "icon": "icons/kh1-generic/tarzan.webp"
+    "icon": "icons/kh1-generic/tarzan.webp",
+    "points": 2
   },
   {
     "name": "Have Aladdin join your party",
-    "icon": "icons/kh1-generic/aladdin.webp"
+    "icon": "icons/kh1-generic/aladdin.webp",
+    "points": 2
   },
   {
     "name": "Have Ariel join your party",
-    "icon": "icons/kh1-generic/ariel.webp"
+    "icon": "icons/kh1-generic/ariel.webp",
+    "points": 2
   },
   {
     "name": "Have Jack join your party",
-    "icon": "icons/kh1-generic/jack.webp"
+    "icon": "icons/kh1-generic/jack.webp",
+    "points": 2
   },
   {
     "name": "Have Peter Pan join your party",
-    "icon": "icons/kh1-generic/peter-pan.webp"
+    "icon": "icons/kh1-generic/peter-pan.webp",
+    "points": 2
   },
   {
     "name": "Have Beast join your party",
-    "icon": "icons/kh1-generic/beast.webp"
+    "icon": "icons/kh1-generic/beast.webp",
+    "points": 2
   }
 ]
