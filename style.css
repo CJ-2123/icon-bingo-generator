@@ -299,7 +299,7 @@ button:hover {
   box-sizing: border-box;
   font-size: 20px;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .objective img {
