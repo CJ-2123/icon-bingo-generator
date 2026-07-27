@@ -129,11 +129,13 @@ function generateGame() {
   const error = validateGameSetup();
   if (error) {
     status.textContent = error;
+    alert(error);
     return;
   }
 
   if (allObjectives.length === 0) {
     status.textContent = "No objectives loaded!";
+    alert("No objectives loaded!");
     return;
   }
 
