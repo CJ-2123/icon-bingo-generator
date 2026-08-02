@@ -120,7 +120,7 @@
     "icon": "icons/oot/big-octo.webp"
   },
   {
-    "name": "Defeat a Skull Kid",
+    "name": "Skull Kid Check",
     "icon": "icons/oot/skull-kid.webp"
   },
   {
@@ -130,6 +130,14 @@
   {
     "name": "Defeat Amy (Green Poe)",
     "icon": "icons/oot/poe-green.webp"
+  },
+  {
+    "name": "Defeat Joelle (Red Poe)",
+    "icon": "icons/oot/poe-red.webp"
+  },
+  {
+    "name": "Defeat Beth (Blue Poe)",
+    "icon": "icons/oot/poe-blue.webp"
   },
   {
     "name": "Defeat Meg (Purple Poe)",
@@ -200,6 +208,14 @@
     "icon": "icons/oot/songs-6.webp"
   },
   {
+    "name": "7 Songs",
+    "icon": "icons/oot/songs-7.webp"
+  },
+  {
+    "name": "8 Songs",
+    "icon": "icons/oot/songs-8.webp"
+  },
+  {
     "name": "5 Hearts",
     "icon": "icons/oot/hearts-5.webp"
   },
@@ -258,6 +274,34 @@
   {
     "name": "Biggoron's Sword",
     "icon": "icons/oot/biggoron-sword.webp"
+  },
+  {
+    "name": "2 Shields & 2 Boots",
+    "icon": "icons/oot/2-shields-boots.webp"
+  },
+  {
+    "name": "2 Shields & 2 Tunics",
+    "icon": "icons/oot/2-shields-tunics.webp"
+  },
+  {
+    "name": "2 Swords & 2 Boots",
+    "icon": "icons/oot/2-swords-boots.webp"
+  },
+  {
+    "name": "2 Swords & 2 Shields",
+    "icon": "icons/oot/2-swords-shields.webp"
+  },
+  {
+    "name": "2 Swords & 2 Tunics",
+    "icon": "icons/oot/2-swords-tunics.webp"
+  },
+  {
+    "name": "2 Swords, Tunics, Boots, and Shields",
+    "icon": "icons/oot/2-swords-tunics-boots-shields.webp"
+  },
+  {
+    "name": "2 Tunics & 2 Boots",
+    "icon": "icons/oot/2-tunics-boots.webp"
   },
   {
     "name": "Bottled Fairy",
@@ -446,8 +490,28 @@
     "tags": ["Skulltulas"]
   },
   {
-    "name": "2 Skulltulas in Lon Lon Ranch",
+    "name": "All 3 Kokiri Forest area Skulltulas",
+    "icon": "icons/oot/skulltulas-kokiri.webp",
+    "tags": ["Skulltulas"]
+  },
+  {
+    "name": "All 4 Gerudo Valley area Skulltulas",
+    "icon": "icons/oot/skulltulas-gerudovalley.webp",
+    "tags": ["Skulltulas"]
+  },
+  {
+    "name": "All 4 Lon-Lon Ranch area Skulltulas",
     "icon": "icons/oot/skulltulas-ranch.webp",
+    "tags": ["Skulltulas"]
+  },
+  {
+    "name": "All 4 Lost Woods area Skulltulas",
+    "icon": "icons/oot/skulltulas-lostwoods.webp",
+    "tags": ["Skulltulas"]
+  },
+  {
+    "name": "Both Gerudo's Fortress area Skulltulas",
+    "icon": "icons/oot/skulltulas-gerudofortress.webp",
     "tags": ["Skulltulas"]
   },
   {
@@ -560,6 +624,10 @@
     "icon": "icons/oot/nayrus-love.webp"
   },
   {
+    "name": "2 Fairy Spells",
+    "icon": "icons/oot/2-fairy-spells.webp"
+  },
+  {
     "name": "Goron Bracelet",
     "icon": "icons/oot/goron-bracelet.webp"
   },
@@ -603,6 +671,10 @@
     "icon": "icons/oot/skull-mask.webp"
   },
   {
+    "name": "Spooky Mask",
+    "icon": "icons/oot/spooky-mask.webp"
+  },
+  {
     "name": "Gerudo Card",
     "icon": "icons/oot/gerudo-card.webp"
   },
@@ -621,5 +693,155 @@
   {
     "name": "Cow in House",
     "icon": "icons/oot/cow.webp"
+  },
+  {
+    "name": "Ganon's Castle Boss Key",
+    "icon": "icons/oot/bosskey-ganon.webp"
+  },
+  {
+    "name": "Get to the end of Fire Trial",
+    "icon": "icons/oot/trial-fire.webp"
+  },
+  {
+    "name": "Get to the end of Forest Trial",
+    "icon": "icons/oot/trial-forest.webp"
+  },
+  {
+    "name": "Get to the end of Light Trial",
+    "icon": "icons/oot/trial-light.webp"
+  },
+  {
+    "name": "Get to the end of Shadow Trial",
+    "icon": "icons/oot/trial-shadow.webp"
+  },
+  {
+    "name": "Get to the end of Spirit Trial",
+    "icon": "icons/oot/trial-spirit.webp"
+  },
+  {
+    "name": "Get to the end of Water Trial",
+    "icon": "icons/oot/trial-water.webp"
+  },
+  {
+    "name": "Light Arrows",
+    "icon": "icons/oot/light-arrows.webp"
+  },
+  {
+    "name": "Hear the dying soldier's warning",
+    "icon": "icons/oot/soldier.webp"
+  },
+  {
+    "name": "3 Boss Fights"
+  },
+  {
+    "name": "Cannibal Jabu Jabu (Feed a fish)",
+    "icon": "icons/oot/jabu.webp"
+  },
+  {
+    "name": "Have a Poe and Big Poe in a Bottle",
+    "icon": "icons/oot/bottle-poes.webp"
+  },
+  {
+    "name": "Open all 3 Chests in Goron City Maze",
+    "icon": "icons/oot/goron-maze.webp"
+  },
+  {
+    "name": "Get dragged away by a Wallmaster",
+    "icon": "icons/oot/wallmaster.webp"
+  },
+  {
+    "name": "Buy an item from 3 Merchants",
+    "icon": "icons/oot/shops-3.webp"
+  },
+  {
+    "name": "Defeat Dead Hand in the Bottom of the Well",
+    "icon": "icons/oot/deadhand.webp"
+  },
+  {
+    "name": "Kokiri Gear (Kokiri Sword, Deku Shield, Slingshot)",
+    "icon": "icons/oot/kokiri-gear.webp"
+  },
+  {
+    "name": "Goron Gear (Goron Tunic, Biggoron Sword, Megaton Hammer)",
+    "icon": "icons/oot/goron-gear.webp"
+  },
+  {
+    "name": "Zora Gear (Zora Tunic, Iron Boots, Longshot)",
+    "icon": "icons/oot/zora-gear.webp"
+  },
+  {
+    "name": "Greg the Green Rupee",
+    "icon": "icons/oot/greg.webp"
+  },
+  {
+    "name": "Open the Center Maze Chest in Gerudo Training Grounds",
+    "icon": "icons/oot/gerudo-maze.webp"
+  },
+  {
+    "name": "Lower the water in Bottom of the Well",
+    "icon": "icons/oot/botw.webp"
+  },
+  {
+    "name": "Feed a normal Dodongo an Explosive",
+    "icon": "icons/oot/dodongo-explosive.webp"
+  },
+  {
+    "name": "Set the Water Level to the Middle in the Water Temple",
+    "icon": "icons/oot/water-temple-middle.webp"
+  },
+  {
+    "name": "Twist 1 Hallway in the Forest Temple",
+    "icon": "icons/oot/forest-temple-twist.webp"
+  },
+  {
+    "name": "Both Checks in Royal Family's Tomb",
+    "icon": "icons/oot/royal-family-tomb.webp"
+  },
+  {
+    "name": "Stop both Rolling Gorons in Goron City",
+    "icon": "icons/oot/rolling-gorons.webp"
+  },
+  {
+    "name": "Plant bean next to Bean Merchant",
+    "icon": "icons/oot/bean-seller.webp"
+  },
+  {
+    "name": "3 Song of Storms Grottos",
+    "icon": "icons/oot/storms-grottos-3.webp"
+  },
+  {
+    "name": "Summon Pierre in 3 Locations",
+    "icon": "icons/oot/pierre-3.webp"
+  },
+  {
+    "name": "Buy out the Left side of any Shop",
+    "icon": "icons/oot/shop-left.webp"
+  },
+  {
+    "name": "Navigate the Haunted Wasteland in any direction",
+    "icon": "icons/oot/haunted-wasteland.webp"
+  },
+  {
+    "name": "Complete the Chest Minigame",
+    "icon": "icons/oot/treasure-chest-game.webp"
+  },
+  {
+    "name": "Buy from 10 Business Scrubs",
+    "icon": "icons/oot/scrubs-10.webp"
+  },
+  {
+    "name": "Flatten a Gossip Stone",
+    "icon": "icons/oot/flat-gossip-stone.webp"
+  },
+  {
+    "name": "Enter Every Dungeon (Child and Adult)"
+  },
+  {
+    "name": "Beat a Gerudo",
+    "icon": "icons/oot/gerudo.webp"
+  },
+  {
+    "name": "Defeat all 5 Moblins in the Sacred Forest Meadow Maze",
+    "icon": "icons/oot/moblin.webp"
   }
 ]
