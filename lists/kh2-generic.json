@@ -158,7 +158,7 @@
   },
   {
     "name": "Find Pooh in the Spooky Cave",
-    "icon": "icons/kh2-generic/kanga.webp",
+    "icon": "icons/kh2-generic/expotition.webp",
     "points": 5
   },
   {
@@ -296,17 +296,17 @@
   },
   {
     "name": "Kill an enemy with Flare Force",
-    "icon": "icons/kh2-generic/donald-duck-flare.webp",
+    "icon": "icons/kh2-generic/donald-duckflare.webp",
     "points": 3
   },
   {
     "name": "Kill an enemy with Comet",
-    "icon": "icons/kh2-generic/donald-comet.webp",
+    "icon": "icons/kh2-generic/donald-fantasia.webp",
     "points": 3
   },
   {
     "name": "Kill an enemy with Tornado Fusion",
-    "icon": "icons/kh2-generic/goofy-tornado-fusion.webp",
+    "icon": "icons/kh2-generic/goofy-tornadofusion.webp",
     "points": 3
   },
   {
@@ -673,12 +673,12 @@
   },
   {
     "name": "Get Terra to 2nd Phase (deplete about 5 bars)",
-    "icon": "icons/kh2-generic/terra-2.webp",
+    "icon": "icons/kh2-generic/terra-2nd.webp",
     "points": 11
   },
   {
     "name": "Get Terra to 3rd Phase (deplete about 10.33 bars)",
-    "icon": "icons/kh2-generic/terra-3.webp",
+    "icon": "icons/kh2-generic/terra-3rd.webp",
     "points": 13
   },
   {
