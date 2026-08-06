@@ -145,51 +145,51 @@
   },
   {
     "name": "Zelda's Lullaby",
-    "icon": "icons/oot/lullaby.webp"
+    "icon": "icons/oot/song-zelda.webp"
   },
   {
     "name": "Epona's Song",
-    "icon": "icons/oot/eponas.webp"
+    "icon": "icons/oot/song-epona.webp"
   },
   {
     "name": "Saria's Song",
-    "icon": "icons/oot/sarias.webp"
+    "icon": "icons/oot/song-saria.webp"
   },
   {
     "name": "Sun's Song",
-    "icon": "icons/oot/suns.webp"
+    "icon": "icons/oot/song-sun.webp"
   },
   {
     "name": "Song of Time",
-    "icon": "icons/oot/time.webp"
+    "icon": "icons/oot/song-time.webp"
   },
   {
     "name": "Song of Storms",
-    "icon": "icons/oot/storms.webp"
+    "icon": "icons/oot/song-storms.webp"
   },
   {
     "name": "Minuet of Forest",
-    "icon": "icons/oot/minuet.webp"
+    "icon": "icons/oot/song-minuet.webp"
   },
   {
     "name": "Bolero of Fire",
-    "icon": "icons/oot/bolero.webp"
+    "icon": "icons/oot/song-bolero.webp"
   },
   {
     "name": "Serenade of Water",
-    "icon": "icons/oot/serenade.webp"
+    "icon": "icons/oot/song-serenade.webp"
   },
   {
     "name": "Requiem of Spirit",
-    "icon": "icons/oot/requiem.webp"
+    "icon": "icons/oot/song-requiem.webp"
   },
   {
     "name": "Nocturne of Shadow",
-    "icon": "icons/oot/nocturne.webp"
+    "icon": "icons/oot/song-nocturne.webp"
   },
   {
     "name": "Prelude of Light",
-    "icon": "icons/oot/prelude.webp"
+    "icon": "icons/oot/song-prelude.webp"
   },
   {
     "name": "3 Songs",
