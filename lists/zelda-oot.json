@@ -843,5 +843,29 @@
   {
     "name": "Defeat all 5 Moblins in the Sacred Forest Meadow Maze",
     "icon": "icons/oot/moblin.webp"
+  },
+  {
+    "name": "3 Silver Rupee Challenges",
+    "icon": "icons/oot/silver-3.webp"
+  },
+  {
+    "name": "Thaw King Zora",
+    "icon": "icons/oot/king-zora-thaw.webp"
+  },
+  {
+    "name": "Spawn or Despawn 3 Time Blocks",
+    "icon": "icons/oot/time-block-3.webp"
+  },
+  {
+    "name": "Win every Shooting Gallery",
+    "icon": "icons/oot/shooting-gallery.webp"
+  },
+  {
+    "name": "Play Saria's Song for Skull Kid, Darunia, and Mido",
+    "icon": "icons/oot/saria-3.webp"
+  },
+  {
+    "name": "Fill the Oasis at Desert Colossus",
+    "icon": "icons/oot/oasis.webp"
   }
 ]
