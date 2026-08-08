@@ -16,6 +16,7 @@ Multi-mode bingo generator with icon support
 4. Click "Generate Game" to generate a game board.
 5. A random seed will be generated if you didn't enter a seed, otherwise the seed you entered will be displayed as the current seed.
    - "Copy Board Link" will save the link to the board to your clipboard to save or share with others. (The address bar in your browser is the same link as "Copy Board Link".)
+     - This can be used as a Browser Source in OBS with approximately these dimensions: Width 550 Height 750
    - "Copy Preset Link" will save the game, settings, and seed (if generated) to your clipboard to save or share with others.
 6. The board is initially hidden. Click to reveal it.
 
@@ -42,7 +43,7 @@ For using your own list, see the "Custom Bingo Lists" section.
 
 ![Archipelago](icons/readme/ap-options.png)
 
-Certain games/lists can be connected to an [Archipelago](https://archipelago.gg/) server for auto-tracking.
+Lists labeled "AP Randomizer" can be connected to an [Archipelago](https://archipelago.gg/) server for auto-tracking.
 
 Current supported games:
 
