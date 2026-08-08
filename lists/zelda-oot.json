@@ -120,10 +120,6 @@
     "icon": "icons/oot/big-octo.webp"
   },
   {
-    "name": "Skull Kid Check",
-    "icon": "icons/oot/skull-kid.webp"
-  },
-  {
     "name": "Defeat a White Wolfos",
     "icon": "icons/oot/wolfos.webp"
   },
@@ -256,12 +252,20 @@
     "icon": "icons/oot/boots-2.webp"
   },
   {
-    "name": "2 Shields",
-    "icon": "icons/oot/shields-2.webp"
+    "name": "3 Boots",
+    "icon": "icons/oot/boots-3.webp"
   },
   {
     "name": "Mirror Shield",
     "icon": "icons/oot/mirror-shield.webp"
+  },
+  {
+    "name": "2 Shields",
+    "icon": "icons/oot/shields-2.webp"
+  },
+  {
+    "name": "3 Shields",
+    "icon": "icons/oot/shields-3.webp"
   },
   {
     "name": "3 Swords",
@@ -727,10 +731,6 @@
     "icon": "icons/oot/light-arrows.webp"
   },
   {
-    "name": "Hear the dying soldier's warning",
-    "icon": "icons/oot/soldier.webp"
-  },
-  {
     "name": "3 Boss Fights"
   },
   {
@@ -845,8 +845,8 @@
     "icon": "icons/oot/moblin.webp"
   },
   {
-    "name": "3 Silver Rupee Challenges",
-    "icon": "icons/oot/silver-3.webp"
+    "name": "6 Silver Rupee Challenges",
+    "icon": "icons/oot/silver-6.webp"
   },
   {
     "name": "Thaw King Zora",
