@@ -571,6 +571,7 @@ details[open] .info-toggle::before {
 
 #score {
   margin-bottom: 50px;
+  font-weight: bold;
 }
 
 /* ===== Marking Color Themes ===== */
