@@ -228,6 +228,10 @@ function generateGame() {
   completedObjectives = [];
   completedList.innerHTML = "";
 
+  Object.keys(squareStates).forEach((k) => delete squareStates[k]);
+  Object.keys(squareCounts).forEach((k) => delete squareCounts[k]);
+  Object.keys(scoreState).forEach((k) => (scoreState[k] = 0));
+
   status.textContent = `Seed: "${seed}"`;
 
   gameStarted = true;
@@ -242,6 +246,7 @@ function generateGame() {
   // display in-game options
   document.getElementById("copyShareLink2").classList.remove("hidden");
   document.getElementById("copyPresetLink2").classList.remove("hidden");
+  document.getElementById("newBoardButton").classList.remove("hidden");
   document.getElementById("backToOptions").classList.remove("hidden");
   document.getElementById("board-controls").classList.remove("hidden");
 
@@ -265,6 +270,8 @@ function generateGame() {
   if (selectedMode === "roguelike") {
     startRoguelikeBingo();
   }
+
+  renderScore();
 
   const gameURL = buildShareURL(true);
   history.pushState({ view: "game" }, "", gameURL);

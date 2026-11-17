@@ -399,3 +399,37 @@ const wheelModeLabel = document.getElementById("wheel-mode-label");
 wheelCheckbox.addEventListener("change", function () {
   wheelModeLabel.textContent = this.checked ? "Mark" : "Count";
 });
+
+// New Board button
+function resetGameState() {
+  // reset square states
+  Object.keys(squareStates).forEach((k) => delete squareStates[k]);
+  Object.keys(squareCounts).forEach((k) => delete squareCounts[k]);
+
+  // reset shiny mode
+  shinySquares.clear();
+  shinyRounds.clear();
+  currentRoundIsShiny = false;
+
+  // reset stored bingo lines
+  bingoLines = [];
+
+  // reset scores
+  scoreState.bingoLines = 0;
+  scoreState.squaresCompleted = 0;
+  scoreState.rushRounds = 0;
+  renderScore();
+
+  // reset rush mode progerss bar
+  completedList.innerHTML = "";
+  document.getElementById("progressBar").style.width = "0%";
+}
+
+// New Board button listener
+document.getElementById("newBoardButton").addEventListener("click", () => {
+  if (!confirm("Generate a new board with current settings?")) return;
+
+  resetGameState();
+  seedInput.value = "";
+  generateGame();
+});

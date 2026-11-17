@@ -142,7 +142,7 @@ button:hover {
   /* box-shadow: inset 0 4px 0 white; */
 }
 
-#mainButton {
+/* #mainButton {
   background: black;
   color: white;
   box-shadow: inset 0 2px 0 gray;
@@ -151,8 +151,7 @@ button:hover {
 #mainButton:hover {
   background: white;
   color: white;
-  /* box-shadow: inset 0 4px 0 white; */
-}
+} */
 
 #copySeedButton {
   display: none;
@@ -253,7 +252,10 @@ button:hover {
 
 .board-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 25px;
   background: rgba(0, 0, 0, 1);
   z-index: 5;
   display: flex;
@@ -697,14 +699,14 @@ button:disabled:hover {
 }
 
 /* Special main button (slightly gold highlight) */
-#mainButton {
+#mainButton, #newBoardButton {
   background: linear-gradient(to bottom, #f1c40f, #b7950b) !important;
   border: 1px solid #7d6608 !important;
   color: black !important;
   text-shadow: none;
 }
 
-#mainButton:hover {
+#mainButton:hover, #newBoardButton:hover {
   color: white !important;
 }
 
