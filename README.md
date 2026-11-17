@@ -15,9 +15,21 @@ Multi-mode bingo generator with icon support
 3. (Optional) Enter a seed
 4. Click "Generate Game" to generate a game board.
 5. A random seed will be generated if you didn't enter a seed, otherwise the seed you entered will be displayed as the current seed.
-   - "Copy Board Link" will save the link to the board to your clipboard to save or share with others. (The address bar in your browser is the same link as "Copy Board Link".)
-     - This can be used as a Browser Source in OBS with approximately these dimensions: Width 550 Height 750
    - "Copy Preset Link" will save the game, settings, and seed (if generated) to your clipboard to save or share with others.
+   - "Copy Board Link" will save the link to the board to your clipboard to save or share with others. (The address bar in your browser is the same link as "Copy Board Link".)
+     - This can be used as a Browser Source in OBS with approximately these dimensions:
+
+| Board Size  | Width | Height |
+| ----------- | ----- | ------ |
+| 5x5 and lower | 550  | 750  |
+| 6x6  | 550  | 850  |
+| 7x7  | 650  | 950  |
+| 8x8  | 750  | 1050  |
+| 9x9  | 850  | 1150  |
+| B9   | 650  | var  |
+| B15  | 850  | var  |
+| B20  | 1150  | var  |
+
 6. The board is initially hidden. Click to reveal it.
 
 **Controls**
@@ -241,6 +253,7 @@ Icons from:
 
 - https://www.khwiki.com
 - https://televo.github.io/kingdom-hearts-recollection/
+- https://github.com/palex00/kh2-ap-tracker
 - https://zelda.fandom.com/wiki/Zelda_Wiki
 - https://www.zeldadungeon.net/wiki/Main_Page
 
