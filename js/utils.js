@@ -122,15 +122,23 @@ function copyGameLink() {
 }
 
 // Shrink text to fit
-function fitAllTileText(container) {
+function fitAllTileText(container, minFontSize = 8, step = 0.5) {
   requestAnimationFrame(() => {
     container.querySelectorAll(".obj-text-inner").forEach((el) => {
       const wrapper = el.parentElement;
-      const minFontSize = 10;
+
+      el.style.fontSize = "";
+
+      const cs = getComputedStyle(wrapper);
+      const availableHeight =
+        wrapper.clientHeight -
+        parseFloat(cs.paddingTop) -
+        parseFloat(cs.paddingBottom);
+
       let fontSize = parseFloat(getComputedStyle(el).fontSize);
 
-      while (el.scrollHeight > wrapper.clientHeight && fontSize > minFontSize) {
-        fontSize -= 0.5;
+      while (el.scrollHeight > availableHeight && fontSize > minFontSize) {
+        fontSize -= step;
         el.style.fontSize = `${fontSize}px`;
       }
     });
