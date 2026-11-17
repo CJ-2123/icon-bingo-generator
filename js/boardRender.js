@@ -201,6 +201,8 @@ function renderTraditionalBoard() {
     div.classList.remove("border-mark", "completed");
     if (state === 1) div.classList.add("border-mark");
     if (state === 2) div.classList.add("completed");
+
+    updateCountBadge(div, id);
   });
 
   fitAllTileText(board);
@@ -1059,6 +1061,8 @@ function applyIconMode(iconsEnabled) {
     div.appendChild(toggleIconOrText(obj));
 
     addPointsBar(div, obj, "rush");
+
+    updateCountBadge(div, `rush-${obj.name}`);
   });
 
   fitAllTileText(board);
